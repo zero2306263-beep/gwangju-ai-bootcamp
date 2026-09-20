@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>광주대학교 AI 부트캠프 | Cloud Native 아키텍처</title>
+  <meta name="description" content="AWS 서울 현장교육, 2박 3일, 현직자 교류, Cloud Native 실습, GitHub 포트폴리오 프로젝트" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#071a2f;
+      --navy2:#0d2744;
+      --orange:#ff7a1a;
+      --orange2:#ff9547;
+      --ink:#0e1726;
+      --muted:#68758a;
+      --line:#e7ebf1;
+      --bg:#f6f8fb;
+      --white:#fff;
+      --shadow:0 14px 40px rgba(10,34,64,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans KR",system-ui,-apple-system,Segoe UI,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(7,26,47,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px;color:#fff;font-weight:800}
+    .brand-mark{
+      width:34px;height:34px;border-radius:8px;
+      background:linear-gradient(135deg,#9fd36a,#6aa533 54%,#2f6fa8 55%,#8abce6);
+      position:relative;overflow:hidden;
+    }
+    .brand-mark:before{content:"";position:absolute;left:15px;top:0;width:3px;height:100%;background:rgba(255,255,255,.55)}
+    .brand small{display:block;font-size:11px;font-weight:500;color:#b9c7d8;margin-top:-2px}
+    .nav-links{display:flex;gap:26px;color:#dbe5f0;font-size:14px;font-weight:600}
+    .nav-links a:hover{color:#fff}
+    .nav-cta{padding:11px 18px;border-radius:999px;background:var(--orange);color:#fff;font-weight:800;font-size:14px}
+    .hero{
+      background:
+        radial-gradient(circle at 75% 20%, rgba(70,150,255,.18), transparent 34%),
+        linear-gradient(120deg,#06182b 0%,#0b2c50 58%,#0c2440 100%);
+      color:#fff;overflow:hidden;position:relative;
+    }
+    .hero:after{
+      content:"AWS";
+      position:absolute;right:5%;top:10%;
+      font-size:180px;font-weight:800;color:rgba(255,255,255,.035);letter-spacing:-8px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center;padding:76px 0 68px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#d7e3ef;font-weight:700}
+    .eyebrow:before{content:"";width:28px;height:3px;background:var(--orange);border-radius:99px}
+    h1{font-size:56px;line-height:1.08;letter-spacing:-2px;margin:16px 0 18px}
+    .accent{color:var(--orange)}
+    .hero-sub{font-size:20px;font-weight:700;color:#edf4fb}
+    .hero-desc{max-width:720px;color:#c7d5e4;font-size:16px;margin-top:18px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px}
+    .chip{padding:9px 13px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.06);font-size:13px;font-weight:700}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:12px;font-weight:800}
+    .btn-primary{background:var(--orange);color:#fff}
+    .btn-secondary{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.05)}
+    .hero-card{
+      min-height:470px;border-radius:26px;padding:30px;position:relative;
+      background:
+        linear-gradient(rgba(7,26,47,.2),rgba(7,26,47,.3)),
+        linear-gradient(145deg,#123c67,#0d243d 62%,#0a1b2f);
+      box-shadow:0 25px 70px rgba(0,0,0,.26);
+      border:1px solid rgba(255,255,255,.11);
+      display:flex;flex-direction:column;justify-content:flex-end;
+    }
+    .aws-badge{position:absolute;top:26px;right:26px;font-size:56px;font-weight:800;letter-spacing:-3px;color:#fff}
+    .aws-smile{width:76px;height:20px;border-bottom:6px solid var(--orange);border-radius:0 0 60% 60%;transform:rotate(-8deg);margin-left:8px;margin-top:-8px}
+    .hero-card-note{background:rgba(3,13,24,.55);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
+    .hero-card-note strong{font-size:20px;display:block}
+    .hero-card-note span{color:#cdd9e7;font-size:14px}
+    .section{padding:72px 0}
+    .section.alt{background:var(--bg)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .section-kicker{color:var(--orange);font-weight:800;font-size:14px}
+    .section h2{font-size:34px;letter-spacing:-1px;margin:4px 0 0}
+    .section-note{color:var(--muted);max-width:620px}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+    .icon{font-size:28px;margin-bottom:14px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .track{background:var(--navy);color:#fff;border-radius:24px;padding:30px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:center}
+    .track-item{text-align:center;padding:16px 8px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .track-item strong{display:block;font-size:14px}
+    .track-item span{font-size:12px;color:#bdcada}
+    .arrow{text-align:center;color:#8aa3bd;font-weight:800}
+    .days{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .day{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+    .day-badge{display:inline-block;background:var(--orange);color:#fff;font-weight:800;font-size:13px;padding:7px 10px;border-radius:8px;margin-bottom:12px}
+    .day h3{font-size:20px;margin:0 0 8px}
+    .day ul{margin:12px 0 0;padding-left:20px;color:#536075}
+    .day li{margin:7px 0}
+    .schedule{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .schedule th,.schedule td{padding:16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    .schedule th{background:#eef3f8;font-size:14px}
+    .schedule td{font-size:14px}
+    .schedule tr:last-child td{border-bottom:0}
+    .info-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .info-panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+    .info-row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+    .info-row:last-child{border-bottom:0}
+    .info-row strong{font-size:14px}
+    .info-row span{color:#536075}
+    .cta{
+      background:linear-gradient(120deg,#071a2f,#113b67);
+      color:#fff;border-radius:24px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .cta h3{font-size:28px;margin:0 0 8px}
+    .cta p{margin:0;color:#c8d5e3}
+    footer{background:#061423;color:#aebfd0;padding:28px 0;font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .faq{display:grid;gap:12px}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+    summary{cursor:pointer;font-weight:700}
+    details p{color:var(--muted);margin:10px 0 0}
+    @media (max-width: 900px){
+      .nav-links{display:none}
+      .hero-grid,.info-grid{grid-template-columns:1fr}
+      h1{font-size:42px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .days{grid-template-columns:1fr}
+      .track{grid-template-columns:1fr 30px 1fr}
+      .schedule{display:block;overflow-x:auto;white-space:nowrap}
+      .cta{flex-direction:column;align-items:flex-start}
+    }
+    @media (max-width: 620px){
+      .container{width:min(100% - 24px,1180px)}
+      h1{font-size:34px}
+      .hero-sub{font-size:17px}
+      .cards{grid-template-columns:1fr}
+      .track{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg)}
+      .section{padding:56px 0}
+      .section h2{font-size:28px}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark"></span>
+        <span>광주대학교 <small>AI 부트캠프</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#intro">프로그램 소개</a>
+        <a href="#curriculum">교육내용</a>
+        <a href="#schedule">교육일정</a>
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#apply">신청안내</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#apply">신청 준비하기 →</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">광주대학교 AI 부트캠프</div>
+          <h1>Cloud Native 아키텍처<br><span class="accent">AWS 현장방문형 몰입교과목</span></h1>
+          <div class="hero-sub">서울 AWS 현장교육 · 2박 3일 · 포트폴리오형 프로젝트 · 15시간 / 1학점</div>
+          <p class="hero-desc">
+            중간고사 직후 2박 3일 동안 AWS 서울 현장을 방문해 오피스 투어, 현직 개발자 교류,
+            Cloud Native 실습, GitHub 포트폴리오 제작까지 한 번에 경험합니다.
+          </p>
+          <div class="chips">
+            <span class="chip">AWS 현장방문</span>
+            <span class="chip">현직 개발자 교류</span>
+            <span class="chip">오피스 투어</span>
+            <span class="chip">Docker · ECR · EKS</span>
+            <span class="chip">Kubernetes · CloudWatch</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#curriculum">교육내용 보기 →</a>
+            <a class="btn btn-secondary" href="#schedule">교육일정 보기</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="AWS 프로그램 하이라이트">
+          <div class="aws-badge">aws<div class="aws-smile"></div></div>
+          <div class="hero-card-note">
+            <strong>2026.10.28.(수) ~ 10.30.(금)</strong>
+            <span>서울 AWS 현장교육 · 2박 3일 집중 운영</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="intro">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">PROGRAM POINT</div>
+            <h2>학생들이 체감할 수 있는 4가지 핵심 포인트</h2>
+          </div>
+          <p class="section-note">단순 견학이 아니라 실제 실습과 결과물이 남는 몰입형 교과목으로 구성했습니다.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📍</div>
+            <h3>AWS 현장방문</h3>
+            <p>서울 AWS 오피스 현장교육과 오피스 투어를 통해 글로벌 클라우드 기업의 업무환경을 직접 경험합니다.</p>
+          </article>
+          <article class="card">
+            <div class="icon">👥</div>
+            <h3>현직자 교류</h3>
+            <p>클라우드 현직 개발자 및 전문가의 기술 이야기와 Career Talk, 질의응답을 진행합니다.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🗓️</div>
+            <h3>2박 3일 몰입형</h3>
+            <p>중간고사 직후 집중 운영하여 수업·실습·프로젝트를 끊김 없이 하나의 경험으로 연결합니다.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💼</div>
+            <h3>포트폴리오형 프로젝트</h3>
+            <p>GitHub에 남는 결과물을 완성하여 현장실습·인턴·취업 지원 시 활용할 수 있습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">PROJECT FLOW</div>
+            <h2>이렇게 배우고, 이렇게 결과물을 만듭니다</h2>
+          </div>
+          <p class="section-note">실무와 유사한 흐름으로 서비스 구축부터 운영, 모니터링, 포트폴리오 정리까지 진행합니다.</p>
+        </div>
+
+        <div class="track">
+          <div class="track-item"><strong>Docker</strong><span>컨테이너화</span></div>
+          <div class="arrow">→</div>
+          <div class="track-item"><strong>Amazon ECR</strong><span>이미지 저장소</span></div>
+          <div class="arrow">→</div>
+          <div class="track-item"><strong>Amazon EKS</strong><span>컨테이너 오케스트레이션</span></div>
+          <div class="arrow">→</div>
+          <div class="track-item"><strong>Kubernetes</strong><span>서비스 배포</span></div>
+          <div class="arrow">→</div>
+          <div class="track-item"><strong>CloudWatch</strong><span>모니터링</span></div>
+          <div class="arrow">→</div>
+          <div class="track-item"><strong>GitHub</strong><span>취업 포트폴리오</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="curriculum">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">CURRICULUM</div>
+            <h2>3일 동안 무엇을 배우나요?</h2>
+          </div>
+          <p class="section-note">AWS 현장방문과 Cloud Native 실습을 단계적으로 연결해 마지막 날 개인 결과물까지 완성합니다.</p>
+        </div>
+
+        <div class="days">
+          <article class="day">
+            <span class="day-badge">Day 1 · 10.28.(수)</span>
+            <h3>AWS 방문 & 현직자 교류</h3>
+            <ul>
+              <li>AWS 오피스 투어</li>
+              <li>클라우드 산업 및 직무 소개</li>
+              <li>현직 개발자 Career Talk</li>
+              <li>Cloud Native Architecture 기초</li>
+              <li>Docker 실습</li>
+            </ul>
+          </article>
+          <article class="day">
+            <span class="day-badge">Day 2 · 10.29.(목)</span>
+            <h3>ECR · EKS · Kubernetes 실습</h3>
+            <ul>
+              <li>Amazon ECR</li>
+              <li>Kubernetes 핵심구조 이해</li>
+              <li>Amazon EKS 배포</li>
+              <li>Deployment / Service</li>
+              <li>Scaling 실습</li>
+            </ul>
+          </article>
+          <article class="day">
+            <span class="day-badge">Day 3 · 10.30.(금)</span>
+            <h3>운영 · 모니터링 · 포트폴리오</h3>
+            <ul>
+              <li>Rolling Update</li>
+              <li>Pod 장애 및 복구 실습</li>
+              <li>CloudWatch 모니터링</li>
+              <li>프로젝트 결과 정리</li>
+              <li>GitHub 포트폴리오 발표</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="schedule">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">SCHEDULE</div>
+            <h2>교육일정</h2>
+          </div>
+          <p class="section-note">중간고사 직후 수·목·금 2박 3일 일정으로 집중 운영합니다.</p>
+        </div>
+
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th>일자</th>
+              <th>주요 주제</th>
+              <th>주요 활동</th>
+              <th>교육시간</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10.28.(수)</td>
+              <td>AWS 현장방문 & Cloud Native 기초</td>
+              <td>AWS 오피스 투어, 현직자 교류, Cloud Native 이해, Docker 실습</td>
+              <td>5H</td>
+            </tr>
+            <tr>
+              <td>10.29.(목)</td>
+              <td>ECR · EKS · Kubernetes</td>
+              <td>이미지 관리, EKS 배포, Deployment / Service, Scaling</td>
+              <td>6H</td>
+            </tr>
+            <tr>
+              <td>10.30.(금)</td>
+              <td>운영 · 모니터링 · 포트폴리오</td>
+              <td>Rolling Update, 장애복구, CloudWatch, GitHub 결과발표</td>
+              <td>4H</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container info-grid">
+        <div class="info-panel">
+          <div class="section-kicker">PROGRAM INFO</div>
+          <h2 style="font-size:28px;margin-top:4px">한눈에 보는 프로그램 정보</h2>
+          <div class="info-row"><strong>교과목명</strong><span>Cloud Native 아키텍처</span></div>
+          <div class="info-row"><strong>운영기간</strong><span>2026.10.28.(수) ~ 10.30.(금), 2박 3일</span></div>
+          <div class="info-row"><strong>교육장소</strong><span>서울 AWS 오피스 및 연계 교육공간</span></div>
+          <div class="info-row"><strong>참여대상</strong><span>광주대학교 AI 부트캠프 참여학생 약 10명</span></div>
+          <div class="info-row"><strong>교육시간</strong><span>총 15시간</span></div>
+          <div class="info-row"><strong>학점</strong><span>1학점 / P·F</span></div>
+        </div>
+        <div class="info-panel">
+          <div class="section-kicker">RECOMMENDED FOR</div>
+          <h2 style="font-size:28px;margin-top:4px">이런 학생에게 추천합니다</h2>
+          <div class="info-row"><strong>Cloud</strong><span>클라우드·DevOps 직무에 관심 있는 학생</span></div>
+          <div class="info-row"><strong>Portfolio</strong><span>취업에 활용할 실무형 포트폴리오를 만들고 싶은 학생</span></div>
+          <div class="info-row"><strong>AWS</strong><span>AWS 기반 서비스 운영을 직접 경험해 보고 싶은 학생</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2>자주 묻는 질문</h2>
+          </div>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>비전공자도 참여할 수 있나요?</summary>
+            <p>기본 실습환경과 Starter Application을 제공하는 방식으로 운영하여 비전공자도 단계별로 따라갈 수 있도록 구성합니다.</p>
+          </details>
+          <details>
+            <summary>개인 노트북이 필요한가요?</summary>
+            <p>세부 준비물은 최종 모집공고에서 안내합니다. 실습환경과 계정 설정은 사전 안내 예정입니다.</p>
+          </details>
+          <details>
+            <summary>결과물은 무엇이 남나요?</summary>
+            <p>Dockerfile, Kubernetes 배포파일, Architecture Diagram, CloudWatch 결과, GitHub Repository 등 개인별 프로젝트 결과물이 남습니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apply">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h3>지금, 특별한 2박 3일을 준비하세요.</h3>
+            <p>AWS 현장경험과 실무 프로젝트를 하나의 포트폴리오로 연결합니다.</p>
+          </div>
+          <a class="btn btn-primary" href="#" onclick="return false;">신청 링크 추후 오픈</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>광주대학교 AI 부트캠프사업단</div>
+      <div>문의: 광주대학교 AI 부트캠프사업단</div>
+      <div>※ 세부 일정 및 교육내용은 운영 협의에 따라 일부 변경될 수 있습니다.</div>
+    </div>
+  </footer>
+</body>
+</html>
