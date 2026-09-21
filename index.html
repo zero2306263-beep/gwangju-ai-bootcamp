@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>광주대학교 AI 부트캠프 | 몰입형 교과목 - Cloud Native 아키텍처</title>
-  <meta name="description" content="광주대학교 AI 부트캠프 몰입형 교과목. AWS 서울 현장방문, 2박 3일 Cloud Native 실습, GitHub 포트폴리오 프로젝트" />
+  <meta name="description" content="광주대학교 AI 부트캠프 몰입형 교과목. AWS 서울 현장방문과 클라우드 전문기업 연계 실습, 2박 3일 Cloud Native 프로젝트, GitHub 포트폴리오" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -144,6 +144,12 @@
     .location-line{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:#536075;font-size:14px}
     .location-line b{min-width:72px;color:var(--ink)}
     .location-note{margin-top:12px;padding:12px 14px;border-radius:12px;background:#fff7ef;color:#8a4a18;font-size:13px;border:1px solid #ffd9b8}
+    .partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .partner-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+    .partner-label{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef3f8;color:var(--navy);font-size:12px;font-weight:800;margin-bottom:12px}
+    .partner-card h3{margin:0 0 10px;font-size:19px}
+    .partner-card p{margin:0;color:var(--muted);font-size:14px}
+    .partner-note{margin-top:16px;padding:14px 16px;border:1px solid #ffd9b8;background:#fff7ef;border-radius:14px;color:#8a4a18;font-size:13px}
     .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .portfolio-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
     .portfolio-item strong{display:block;margin-bottom:6px}
@@ -165,7 +171,7 @@
       .hero-grid,.info-grid{grid-template-columns:1fr}
       h1{font-size:42px}
       .cards{grid-template-columns:repeat(2,1fr)}
-      .days,.portfolio-grid,.activity-grid{grid-template-columns:1fr}
+      .days,.portfolio-grid,.activity-grid,.partner-grid{grid-template-columns:1fr}
       .summary-grid{grid-template-columns:repeat(2,1fr)}
       .track{grid-template-columns:1fr 30px 1fr}
       .schedule{display:block;overflow-x:auto;white-space:nowrap}
@@ -208,15 +214,16 @@
         <div>
           <div class="eyebrow">광주대학교 AI 부트캠프 · 2026학년도 2학기</div>
           <h1>몰입형 교과목<br><span class="accent">Cloud Native 아키텍처</span></h1>
-          <div class="hero-sub">Cloud Native 아키텍처 특별 운영 · 서울 AWS 현장방문 예정 · 2박 3일 · 총 15시간 · 1학점(P/F)</div>
+          <div class="hero-sub">AWS 현장방문 예정 · 클라우드 전문기업 연계 실습 · 2박 3일 · 총 15시간 · 1학점(P/F)</div>
           <p class="hero-desc">
             광주대학교 AI 부트캠프의 몰입형 교과목 중 <b>Cloud Native 아키텍처</b>는
-            이번 학기에 한해 서울 AWS 현장방문형으로 특별 운영합니다.
-            다른 몰입형 교과목은 광주대학교에서 운영하며, 본 교과목만 2박 3일 집중 일정으로 진행합니다.
+            서울 AWS 현장방문과 클라우드 전문기업의 실무형 교육을 결합해 특별 운영합니다.
+            단순 견학이 아니라 전문강사와 함께 Docker·EKS·Kubernetes를 직접 실습하고,
+            서비스 배포·운영·장애복구 결과를 GitHub 포트폴리오로 완성합니다.
           </p>
           <div class="chips">
             <span class="chip">AWS Korea · 서울 강남구 센터필드</span>
-            <span class="chip">현직자 Career Talk 예정</span>
+            <span class="chip">으뜸정보기술 교육운영 협력 예정</span>
             <span class="chip">Docker · ECR · EKS</span>
             <span class="chip">Kubernetes · CloudWatch</span>
             <span class="chip">GitHub 포트폴리오</span>
@@ -250,15 +257,16 @@
         <div class="what-box">
           <strong>이번 「Cloud Native 아키텍처」 교과목의 특징</strong>
           <p>
-            여러 몰입형 교과목 가운데 이번 <b>Cloud Native 아키텍처</b>는 서울 AWS 현장방문과 2박 3일 집중 실습을 결합한 특별 운영 과정입니다.
-            다른 몰입형 교과목은 광주대학교에서 운영되며, 교과목별 내용과 일정에 따라 수업 방식이 달라집니다.
+            여러 몰입형 교과목 가운데 이번 <b>Cloud Native 아키텍처</b>는 서울 AWS 현장방문과
+            <b>㈜으뜸정보기술 연계 전문강사 실습</b>을 결합한 2박 3일 특별 운영 과정입니다.
+            실습환경 구성, 기술지원, 프로젝트 지도와 결과물 피드백까지 연계하여 실제 클라우드 운영 경험을 만드는 데 초점을 둡니다.
           </p>
         </div>
 
         <div class="summary-grid">
-          <div class="summary-item"><b>특별 운영</b><span>Cloud Native 아키텍처 한정</span></div>
+          <div class="summary-item"><b>전문기업 연계</b><span>으뜸정보기술 협력 예정</span></div>
           <div class="summary-item"><b>2박 3일</b><span>광주대학교 출발 · 단체이동</span></div>
-          <div class="summary-item"><b>15시간</b><span>총 교육시간</span></div>
+          <div class="summary-item"><b>15시간</b><span>현장 + 실습 + 프로젝트</span></div>
           <div class="summary-item"><b>1학점</b><span>P/F 평가</span></div>
         </div>
 
@@ -270,13 +278,13 @@
           </article>
           <article class="card">
             <div class="icon">🧑‍💻</div>
-            <h3>직접 배포하는 실습</h3>
-            <p>준비된 Starter Application을 활용해 코딩 부담을 줄이고, 배포·운영 과정에 집중합니다.</p>
+            <h3>전문강사 실습지도</h3>
+            <p>클라우드 전문기업의 실무강사와 준비된 Starter Application을 활용해 AWS 배포·운영을 직접 실습합니다.</p>
           </article>
           <article class="card">
             <div class="icon">🛠️</div>
-            <h3>장애복구까지 경험</h3>
-            <p>서비스 개수를 늘려보고, 버전을 바꿔보고, 일부 서비스가 멈췄을 때 자동 복구되는 과정을 확인합니다.</p>
+            <h3>프로젝트 기술지원</h3>
+            <p>Scaling, Rolling Update, 장애복구, 모니터링 과정을 수행하고 실습 중 발생하는 문제를 전문가 피드백과 함께 해결합니다.</p>
           </article>
           <article class="card">
             <div class="icon">💼</div>
@@ -287,7 +295,39 @@
       </div>
     </section>
 
-    <section class="section alt">
+
+    <section class="section alt" id="partners">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">OPERATION PARTNERSHIP</div>
+            <h2>교육은 이렇게 운영합니다</h2>
+          </div>
+          <p class="section-note">대학의 학사·학생관리와 클라우드 전문기업의 실습·기술지원을 결합한 운영방식입니다.</p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <span class="partner-label">광주대학교 AI 부트캠프사업단</span>
+            <h3>교과목·학생·안전관리</h3>
+            <p>몰입형 교과목 운영, 참여학생 선발, 학사관리, 단체이동, 출결·평가 및 성과관리를 담당합니다.</p>
+          </article>
+          <article class="partner-card">
+            <span class="partner-label">㈜으뜸정보기술 · 협력 예정</span>
+            <h3>클라우드 실습·프로젝트 지원</h3>
+            <p>AWS 기반 실습환경 구성, 클라우드 전문강사, 프로젝트 멘토링, 기술지원 및 GitHub 결과물 피드백을 연계할 예정입니다.</p>
+          </article>
+          <article class="partner-card">
+            <span class="partner-label">AWS Korea · 협의 예정</span>
+            <h3>서울 오피스 현장방문</h3>
+            <p>AWS Korea 서울 오피스 현장방문과 현장 프로그램을 협의하여 클라우드 산업과 업무환경을 직접 경험할 수 있도록 구성합니다.</p>
+          </article>
+        </div>
+        <div class="partner-note">※ ㈜으뜸정보기술 연계 교육운영과 AWS Korea 현장방문 세부사항은 사업단의 관련 절차 및 관계기관 최종 협의 결과에 따라 확정됩니다.</div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <div>
@@ -301,32 +341,32 @@
           <article class="activity">
             <span class="activity-num">1</span>
             <h3>AWS 현장방문</h3>
-            <p>AWS 서울 오피스를 방문해 클라우드 기업의 업무환경을 보고, 현직자 Career Talk와 질의응답을 진행할 예정입니다.</p>
+            <p>AWS Korea 서울 오피스를 방문해 클라우드 산업과 업무환경을 직접 살펴보는 현장 프로그램을 협의하여 운영합니다.</p>
           </article>
           <article class="activity">
             <span class="activity-num">2</span>
-            <h3>서비스 직접 배포</h3>
-            <p>준비된 웹 서비스를 Docker로 실행하고 Amazon ECR과 EKS를 활용해 AWS 환경에 직접 배포합니다.</p>
+            <h3>클라우드 전문가 Career Talk</h3>
+            <p>으뜸정보기술 등 클라우드 현업 전문가와 직무, 필요역량, 취업·진로에 대해 이야기하고 질의응답을 진행합니다.</p>
           </article>
           <article class="activity">
             <span class="activity-num">3</span>
-            <h3>서비스 운영 실습</h3>
-            <p>접속량이 늘어났다고 가정해 서비스를 확장하고, 버전을 변경하고, 장애 발생 후 자동복구되는 과정도 확인합니다.</p>
+            <h3>서비스 직접 배포</h3>
+            <p>전문강사와 준비된 웹 서비스를 Docker로 실행하고 Amazon ECR과 EKS를 활용해 AWS 환경에 직접 배포합니다.</p>
           </article>
           <article class="activity">
             <span class="activity-num">4</span>
-            <h3>CloudWatch 모니터링</h3>
-            <p>서비스 상태와 로그를 확인하면서 실제 클라우드 운영에서 무엇을 점검하는지 실습합니다.</p>
+            <h3>운영·장애복구 실습</h3>
+            <p>서비스 확장, 버전 변경, Pod 장애와 자동복구를 실습하고 CloudWatch로 서비스 상태와 로그를 확인합니다.</p>
           </article>
           <article class="activity">
             <span class="activity-num">5</span>
-            <h3>GitHub 포트폴리오 제작</h3>
-            <p>실습 파일, 서비스 구조도, 배포 화면, 장애복구 결과를 정리해 본인이 설명할 수 있는 프로젝트 자료로 만듭니다.</p>
+            <h3>프로젝트 멘토링</h3>
+            <p>실습 중 발생한 오류와 설정 문제를 전문가 피드백으로 해결하고, 서비스 구조와 운영방식을 스스로 설명할 수 있도록 정리합니다.</p>
           </article>
           <article class="activity">
             <span class="activity-num">6</span>
-            <h3>결과 공유</h3>
-            <p>마지막 날 본인이 구축한 서비스와 실습 과정을 정리하고, 프로젝트 결과를 간단하게 발표합니다.</p>
+            <h3>GitHub 포트폴리오 완성</h3>
+            <p>README, Dockerfile, Kubernetes YAML, 구조도와 배포·운영 결과를 GitHub에 정리하고 최종 피드백을 받습니다.</p>
           </article>
         </div>
       </div>
@@ -375,7 +415,7 @@
             <p>클라우드 직무를 이해하고, 직접 서비스를 실행할 준비를 합니다.</p>
             <ul>
               <li>AWS 오피스 투어 및 현장 프로그램</li>
-              <li>클라우드 직무·산업 소개 및 Career Talk</li>
+              <li>클라우드 전문기업 실무자 Career Talk 및 질의응답</li>
               <li>Cloud Native가 무엇인지 쉽게 이해하기</li>
               <li>Docker로 애플리케이션 실행하기</li>
             </ul>
@@ -384,7 +424,7 @@
           <article class="day">
             <span class="day-badge">Day 2 · 10.29.(목) · 6H</span>
             <h3>AWS에 실제 서비스 배포</h3>
-            <p>내가 만든 서비스를 AWS 환경에 올리고 Kubernetes로 실행합니다.</p>
+            <p>클라우드 전문강사의 지도에 따라 서비스를 AWS 환경에 올리고 Kubernetes로 실행합니다.</p>
             <ul>
               <li>Docker 이미지 빌드 및 Amazon ECR 저장</li>
               <li>Kubernetes 핵심 개념 이해</li>
@@ -397,7 +437,7 @@
           <article class="day">
             <span class="day-badge">Day 3 · 10.30.(금) · 4H</span>
             <h3>운영 + 장애복구 + 포트폴리오</h3>
-            <p>실제 운영에서 자주 쓰는 기능을 체험하고 결과물을 정리합니다.</p>
+            <p>전문가의 기술지원과 피드백을 받으며 실제 운영 기능을 체험하고 포트폴리오를 완성합니다.</p>
             <ul>
               <li>서비스 버전 변경(Rolling Update)</li>
               <li>Pod 장애 발생 및 자동복구 확인</li>
@@ -481,7 +521,9 @@
           <h2 style="font-size:28px;margin-top:4px">몰입형 교과목 기본정보</h2>
           <div class="info-row"><strong>구분</strong><span>2026학년도 2학기 AI 부트캠프 몰입형 교과목</span></div>
           <div class="info-row"><strong>교과목명</strong><span>Cloud Native 아키텍처</span></div>
-          <div class="info-row"><strong>운영특징</strong><span>이번 교과목만 서울 현장방문형 2박 3일 특별 운영</span></div>
+          <div class="info-row"><strong>운영특징</strong><span>이번 교과목만 서울 현장방문 + 전문기업 실습형 2박 3일 특별 운영</span></div>
+          <div class="info-row"><strong>교육운영 협력</strong><span>㈜으뜸정보기술(예정)</span></div>
+          <div class="info-row"><strong>협력내용</strong><span>AWS 기반 실습환경, 전문강사, 프로젝트 멘토링·기술지원, GitHub 결과물 피드백</span></div>
           <div class="info-row"><strong>운영기간</strong><span>2026.10.28.(수) ~ 10.30.(금), 2박 3일</span></div>
           <div class="info-row"><strong>교육장소</strong><span>Amazon Web Services Korea (AWS Korea) 서울 오피스 · 서울특별시 강남구 테헤란로 231 (역삼동), 센터필드 이스트타워</span></div>
           <div class="info-row"><strong>이동방법</strong><span>광주대학교 집결 후 참가학생 단체이동</span></div>
@@ -526,6 +568,11 @@
           </details>
 
           <details>
+            <summary>실습은 누가 지도하나요?</summary>
+            <p>교육운영 협력 예정인 ㈜으뜸정보기술의 클라우드 전문강사와 기술지원 인력이 AWS 기반 실습과 프로젝트를 지원하는 방향으로 협의 중입니다. 최종 강사진과 운영범위는 사업단 절차와 협의 후 확정됩니다.</p>
+          </details>
+
+          <details>
             <summary>코딩을 많이 해야 하나요?</summary>
             <p>개발 자체보다 클라우드 환경에서 서비스를 배포하고 운영하는 경험에 초점을 둡니다. 기본적인 명령어와 설정파일은 실습하면서 따라갈 수 있도록 안내합니다.</p>
           </details>
@@ -565,7 +612,7 @@
     <div class="container footer-inner">
       <div>광주대학교 AI 부트캠프사업단</div>
       <div>문의: 광주대학교 AI 부트캠프사업단</div>
-      <div>※ 서울 AWS 현장방문 및 2박 3일 운영은 「Cloud Native 아키텍처」 교과목에 한하며, 세부 일정은 운영 협의에 따라 변경될 수 있습니다.</div>
+      <div>※ ㈜으뜸정보기술 연계 교육운영 및 AWS Korea 현장방문 세부사항은 최종 협의·관련 절차에 따라 변경될 수 있습니다.</div>
     </div>
   </footer>
 </body>
