@@ -37,6 +37,17 @@ h1{font-size:48px;line-height:1.18;letter-spacing:-.045em;margin:14px 0 18px}
 .multi .go{color:#9b5b00}.mlops .go{color:#5d43ab}.native .go{color:#23725e}
 .info{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center}.info strong{display:block;font-size:17px;margin-bottom:6px}.info p{margin:0;color:var(--muted);font-size:13px}
 footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}.footer{display:flex;justify-content:space-between;gap:20px}.footer strong{font-size:13px}.footer span{font-size:11px;color:var(--muted)}
+
+.calendar-section{padding:10px 0 72px}
+.calendar-wrap{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;overflow:auto}
+.calendar-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}
+.calendar-head h2{font-size:28px;margin:0;letter-spacing:-.03em}
+.legend{display:flex;gap:12px;flex-wrap:wrap}.legend span{font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px}.legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.calendar{width:100%;min-width:820px;border-collapse:separate;border-spacing:7px}.calendar th{text-align:center;color:var(--muted);font-size:12px;padding:4px}
+.calendar td{height:112px;width:14.28%;vertical-align:top;background:#f9fafb;border:1px solid var(--line);border-radius:12px;padding:9px}.calendar td.empty{background:transparent;border-color:transparent}
+.date{font-size:12px;font-weight:800;color:#536174}.event{display:block;margin-top:5px;padding:5px 6px;border-radius:7px;font-size:10px;font-weight:700;line-height:1.35}
+.event.multi{background:#fff3e3;color:#9b5b00}.event.mlops{background:#f0ebff;color:#5d43ab}.event.native{background:#e7f6f0;color:#23725e}
+.calendar-note{font-size:12px;color:var(--muted);margin:10px 0 0}
 @media(max-width:900px){.course-grid{grid-template-columns:1fr}.hero{padding-top:60px}h1{font-size:38px}}
 @media(max-width:620px){.container{width:min(100% - 28px,1120px)}h1{font-size:32px}.hero p{font-size:15px}.section{padding:52px 0}.section-head h2{font-size:27px}.footer{flex-direction:column}}
 </style>
@@ -53,7 +64,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}.footer{d
 <div class="container">
 <div class="eyebrow">2026 첨단산업 인재양성 부트캠프사업</div>
 <h1>광주대학교 AI부트캠프<br>2학기 몰입형 교과목</h1>
-<p>2026학년도 2학기 광주대학교 AI부트캠프에서 운영하는 몰입형 교과목입니다. 아래 과목을 선택하면 각 과정의 상세 교육내용과 일정, 실습방식, 프로젝트 내용을 확인할 수 있습니다.</p>
+<p>2026학년도 2학기 광주대학교 AI부트캠프에서 운영하는 몰입형 교과목을 한눈에 확인하는 메인페이지입니다. 과목별 간단한 소개와 전체 일정을 확인한 뒤, 원하는 과목을 클릭하면 상세 홈페이지로 이동합니다.</p>
 <div class="hero-note">과목 카드를 클릭하면 상세 홈페이지로 이동합니다.</div>
 </div>
 </section>
@@ -113,8 +124,59 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}.footer{d
 </div>
 
 <div class="info">
-<strong>과목별 세부내용은 상세 홈페이지에서 확인</strong>
-<p>교육일정, 실습내용, 프로젝트, 이수방법 등은 각 과목 페이지에 별도로 정리되어 있습니다.</p>
+<strong>과목을 클릭하면 상세 홈페이지로 이동합니다.</strong>
+<p>메인페이지에서는 과목 특징과 전체 일정만 확인하고, 세부 교육내용·실습·프로젝트는 각 과목 페이지에서 확인할 수 있습니다.</p>
+</div>
+</div>
+</section>
+
+<section class="calendar-section">
+<div class="container">
+<div class="calendar-wrap">
+<div class="calendar-head">
+<h2>2026년 11월 전체 일정</h2>
+<div class="legend">
+<span><i style="background:var(--multi)"></i>멀티클라우드</span>
+<span><i style="background:var(--mlops)"></i>MLOps</span>
+<span><i style="background:var(--native)"></i>Cloud Native</span>
+</div>
+</div>
+<table class="calendar">
+<thead><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr></thead>
+<tbody>
+<tr><td><span class="date">1</span></td><td><span class="date">2</span></td><td><span class="date">3</span></td><td><span class="date">4</span></td><td><span class="date">5</span></td><td><span class="date">6</span></td><td><span class="date">7</span></td></tr>
+<tr>
+<td><span class="date">8</span></td>
+<td><span class="date">9</span><span class="event multi">멀티클라우드<br>AWS 현직자</span></td>
+<td><span class="date">10</span><span class="event multi">멀티클라우드<br>AWS 온라인</span><span class="event mlops">MLOps 1차시</span></td>
+<td><span class="date">11</span></td>
+<td><span class="date">12</span><span class="event multi">멀티클라우드<br>NHN 현직자</span></td>
+<td><span class="date">13</span><span class="event multi">멀티클라우드<br>NHN 온라인</span></td>
+<td><span class="date">14</span></td>
+</tr>
+<tr>
+<td><span class="date">15</span></td>
+<td><span class="date">16</span><span class="event multi">멀티클라우드<br>통합 프로젝트</span></td>
+<td><span class="date">17</span><span class="event mlops">MLOps 2차시</span></td>
+<td><span class="date">18</span><span class="event native">Cloud Native<br>DAY 1</span></td>
+<td><span class="date">19</span><span class="event native">Cloud Native<br>DAY 2</span></td>
+<td><span class="date">20</span><span class="event native">Cloud Native<br>DAY 3</span></td>
+<td><span class="date">21</span></td>
+</tr>
+<tr>
+<td><span class="date">22</span></td>
+<td><span class="date">23</span><span class="event mlops">MLOps 3차시</span></td>
+<td><span class="date">24</span><span class="event mlops">MLOps 4차시</span></td>
+<td><span class="date">25</span></td><td><span class="date">26</span></td><td><span class="date">27</span></td><td><span class="date">28</span></td>
+</tr>
+<tr>
+<td><span class="date">29</span></td>
+<td><span class="date">30</span><span class="event mlops">MLOps 5차시</span></td>
+<td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td>
+</tr>
+</tbody>
+</table>
+<p class="calendar-note">※ 과목명을 클릭하면 위 과목 카드의 상세 홈페이지로 이동할 수 있으며, 세부일정은 운영상황에 따라 변경될 수 있습니다.</p>
 </div>
 </div>
 </section>
