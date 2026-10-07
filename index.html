@@ -141,6 +141,38 @@ header{
 .datebox b{font-size:12px;display:inline-flex;align-items:center;gap:5px}
 .multi .datebox b{color:#955800}.mlops .datebox b{color:#5741a2}.native .datebox b{color:#216e5a}
 
+
+.completion-section{padding:4px 0 66px}
+.completion-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.completion-head{text-align:center;max-width:760px;margin:0 auto 26px}
+.completion-head small{font-size:10px;font-weight:800;letter-spacing:.15em;color:#597392}
+.completion-head h2{font-size:30px;letter-spacing:-.035em;margin:7px 0 8px}
+.completion-head p{font-size:13px;color:var(--muted);margin:0}
+.level-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.level-card{border:1px solid var(--line);border-radius:17px;padding:22px;background:#fafbfd}
+.level-card.mid{border-top:4px solid var(--multi)}
+.level-card.high{border-top:4px solid var(--mlops)}
+.level-label{display:inline-block;font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;margin-bottom:10px}
+.mid .level-label{background:var(--multi-bg);color:#945800}
+.high .level-label{background:var(--mlops-bg);color:#5741a2}
+.level-card h3{font-size:19px;margin:0 0 8px}
+.level-card p{font-size:13px;color:#566477;margin:0}
+.level-card strong{color:#25364b}
+.course-details{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.course-details summary{cursor:pointer;list-style:none;padding:17px 20px;font-size:14px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.course-details summary::-webkit-details-marker{display:none}
+.course-details summary:after{content:"＋";font-size:18px;color:#607995}
+.course-details[open] summary:after{content:"－"}
+.course-details[open] summary{border-bottom:1px solid var(--line)}
+.all-course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px}
+.all-course-group{background:#f8f9fb;border:1px solid #eceff3;border-radius:13px;padding:16px}
+.all-course-group b{display:block;font-size:13px;margin-bottom:9px}
+.all-course-group ul{margin:0;padding-left:17px;font-size:12px;color:#5b687a}
+.all-course-group li{margin:5px 0}
+.current-note{margin-top:14px;padding:12px 14px;border-radius:11px;background:#f3f6f9;color:#536174;font-size:11px}
+@media(max-width:900px){.level-grid{grid-template-columns:1fr}.all-course-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.all-course-grid{grid-template-columns:1fr}.completion-box{padding:18px}}
+
 .calendar-section{padding:10px 0 76px}
 .calendar-box{
   background:rgba(255,255,255,.97);
@@ -280,6 +312,70 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}
         <div class="datebox"><span>11.18 ~ 11.20 · 2박3일</span><b>상세보기 →</b></div>
       </div>
     </a>
+  </div>
+</div>
+</section>
+
+
+<section class="completion-section">
+<div class="wrap">
+  <div class="completion-box">
+    <div class="completion-head">
+      <small>COMPLETION GUIDE</small>
+      <h2>중급·고급 이수조건</h2>
+      <p>학생이 현재 단계와 필요한 몰입형 교과목을 빠르게 확인할 수 있도록 간단히 정리했습니다.</p>
+    </div>
+
+    <div class="level-grid">
+      <article class="level-card mid">
+        <span class="level-label">중급</span>
+        <h3>중급 이수조건</h3>
+        <p>AI데이터SW 트랙 기준, 지정된 중급 몰입형 교과목 중 <strong>최소 1학점 이상</strong> 이수합니다.</p>
+      </article>
+      <article class="level-card high">
+        <span class="level-label">고급</span>
+        <h3>고급 이수조건</h3>
+        <p>AI데이터SW 트랙 기준, 지정된 고급 몰입형 교과목을 통해 <strong>총 3학점</strong>을 이수합니다.</p>
+      </article>
+    </div>
+
+    <details class="course-details">
+      <summary>전체 몰입형 교과목 보기</summary>
+      <div class="all-course-grid">
+        <div class="all-course-group">
+          <b>초급 · 공통</b>
+          <ul>
+            <li>프롬프트 엔지니어링 A</li>
+            <li>프롬프트 엔지니어링 B</li>
+          </ul>
+        </div>
+        <div class="all-course-group">
+          <b>중급 · 공통/트랙</b>
+          <ul>
+            <li>클라우드 입문</li>
+            <li>ML·딥러닝 기초</li>
+            <li>LLM 애플리케이션</li>
+            <li>AWS·NHN 멀티클라우드 운영</li>
+          </ul>
+        </div>
+        <div class="all-course-group">
+          <b>고급</b>
+          <ul>
+            <li>MLOps</li>
+            <li>Cloud Native 아키텍처</li>
+            <li>멀티클라우드 운영 심화</li>
+          </ul>
+        </div>
+        <div class="all-course-group">
+          <b>특화</b>
+          <ul>
+            <li>제조설비 AI모델링</li>
+            <li>제조AI 연계 실습</li>
+          </ul>
+        </div>
+      </div>
+      <div class="current-note">현재 2학기 컴퓨터공학과 운영과목: AWS·NHN 멀티클라우드 운영, MLOps, Cloud Native 아키텍처</div>
+    </details>
   </div>
 </div>
 </section>
