@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="2026 광주대학교 AI부트캠프 Cloud Native 아키텍처 NHN Cloud 본사 2박3일 현장교육"/>
+<title>Cloud Native 아키텍처 | 광주대학교 AI부트캠프</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#0c1b2d;--muted:#657285;--line:#dfe6ee;--soft:#f5f8fb;
+ --navy:#071c36;--blue:#1d6fff;--cyan:#41d2e5;--mint:#2dd4bf;--white:#fff;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navbar{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:40px;height:40px;border-radius:11px;background:var(--navy);display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800}
+.brand-text{display:flex;flex-direction:column;line-height:1.25}.brand-text strong{font-size:15px}.brand-text small{font-size:11px;color:var(--muted)}
+nav{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:600}nav .cta{background:var(--navy);color:#fff;padding:10px 15px;border-radius:9px}
+.hero{padding:88px 0 78px;background:linear-gradient(135deg,#f4f8ff 0%,#eef8ff 52%,#eefbf9 100%)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center}
+.eyebrow,.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue)}
+h1{font-size:52px;line-height:1.15;letter-spacing:-.05em;margin:14px 0 20px}h1 span{color:var(--blue)}
+.hero p{font-size:18px;color:#48596b;max-width:680px}.hero p strong{color:var(--ink)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-size:14px;font-weight:700}
+.btn.primary{background:var(--blue);color:#fff}.btn.secondary{background:#fff;border:1px solid var(--line)}
+.hero-stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px}.hero-stats div{min-width:118px;border-right:1px solid #ccd7e2;padding-right:18px}.hero-stats div:last-child{border-right:0}.hero-stats b{display:block;font-size:21px}.hero-stats span{font-size:12px;color:var(--muted)}
+.panel{background:var(--navy);border-radius:24px;padding:30px;color:#fff;box-shadow:0 24px 60px rgba(7,28,54,.22)}
+.panel-label{font-size:11px;font-weight:800;letter-spacing:.12em;color:#84e9f1}.flow{margin:22px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.flow div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);padding:14px 8px;border-radius:12px;text-align:center}.flow b{font-size:13px;display:block}.flow span{font-size:10px;color:#a8bad0;display:block;margin-top:3px}
+.panel-card{background:#12345f;border-radius:16px;padding:17px;margin-top:12px}.panel-card strong{display:block;font-size:14px;margin-bottom:8px}.tags{display:flex;flex-wrap:wrap;gap:7px}.tags span{font-size:11px;background:#1b477d;border-radius:8px;padding:6px 9px}
+.section{padding:84px 0}.alt{background:var(--soft)}.section-head{max-width:780px;margin-bottom:38px}.section-head h2{font-size:36px;line-height:1.25;margin:8px 0 12px;letter-spacing:-.035em}.section-head p{margin:0;color:var(--muted)}
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.value{background:#fff;border:1px solid var(--line);border-radius:17px;padding:23px}.value .no{font-size:11px;font-weight:800;color:var(--blue)}.value h3{font-size:17px;margin:8px 0}.value p{font-size:13px;color:var(--muted);margin:0}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.info{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}.info span{display:block;font-size:11px;font-weight:800;color:var(--blue);margin-bottom:7px}.info strong{font-size:15px}
+.trip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.day{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}.day-badge{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--blue);padding:5px 8px;border-radius:999px}.day h3{font-size:20px;margin:13px 0 8px}.day p{font-size:14px;color:var(--muted);margin:0 0 15px}.day ul{padding-left:18px;margin:0;color:#35485c;font-size:13px}
+.timeline{display:flex;flex-direction:column;gap:12px}.timeline-item{display:grid;grid-template-columns:68px 130px 1fr;gap:18px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px}.time{font-weight:800;color:var(--blue);font-size:13px}.timeline-item h3{font-size:17px;margin:0 0 5px}.timeline-item p{font-size:13px;color:var(--muted);margin:0}
+.output-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.output{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px}.output .tag{display:inline-block;font-size:10px;font-weight:800;color:var(--blue);background:#eaf2ff;padding:5px 8px;border-radius:999px}.output h3{font-size:17px;margin:11px 0 7px}.output p{font-size:13px;color:var(--muted);margin:0}
+.requirements{display:grid;grid-template-columns:1fr 1fr;gap:16px}.req{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}.req h3{font-size:18px;margin:0 0 12px}.req ul{margin:0;padding-left:18px;color:#43566a;font-size:14px}.req li{margin:7px 0}
+.cta-sec{padding:70px 0}.cta-card{background:linear-gradient(135deg,#071c36,#134477);color:#fff;border-radius:24px;padding:40px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px}.cta-card h2{font-size:32px;line-height:1.3;margin:10px 0}.cta-card p{color:#c8d8e8}.apply{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:17px;padding:22px}.apply ul{padding-left:18px;margin:12px 0 18px;color:#dbe8f5;font-size:13px}.btn.white{background:#fff;color:var(--navy);width:100%}
+footer{border-top:1px solid var(--line);padding:26px 0}.footer{display:flex;justify-content:space-between;gap:20px}.footer div{display:flex;flex-direction:column}.footer strong{font-size:13px}.footer span,.footer small{font-size:11px;color:var(--muted)}
+@media(max-width:900px){nav{display:none}.hero-grid{grid-template-columns:1fr}.value-grid{grid-template-columns:repeat(2,1fr)}.trip{grid-template-columns:1fr}.info-grid{grid-template-columns:repeat(2,1fr)}.output-grid{grid-template-columns:1fr 1fr}.requirements,.cta-card{grid-template-columns:1fr}.timeline-item{grid-template-columns:80px 1fr}.timeline-item .time{grid-column:1}.timeline-item div:last-child{grid-column:2}}
+@media(max-width:620px){.container{width:min(100% - 28px,1160px)}.hero{padding-top:60px}h1{font-size:36px}.hero p{font-size:16px}.flow{grid-template-columns:1fr 1fr}.value-grid,.info-grid,.output-grid{grid-template-columns:1fr}.section{padding:66px 0}.section-head h2{font-size:29px}.cta-card{padding:27px}.footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container navbar">
+    <a class="brand" href="#top">
+      <span class="brand-mark">GU</span>
+      <span class="brand-text"><strong>광주대학교</strong><small>인공지능 부트캠프사업단</small></span>
+    </a>
+    <nav>
+      <a href="#about">과정소개</a>
+      <a href="#trip">2박3일 일정</a>
+      <a href="#project">프로젝트</a>
+      <a href="#complete">이수안내</a>
+      <a class="cta" href="#apply">신청안내</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">2026 첨단산업 인재양성 부트캠프사업 · 몰입형 교과목</div>
+      <h1>NHN Cloud 본사에서 배우는<br><span>Cloud Native 아키텍처</span></h1>
+      <p><strong>본사 투어 → 현직자 멘토링 → 핵심서비스 실습 → 팀 프로젝트</strong>까지. 2박3일 동안 실제 클라우드 기업의 업무환경과 기술운영 방식을 직접 경험합니다.</p>
+      <div class="actions"><a class="btn primary" href="#trip">2박3일 일정 보기</a><a class="btn secondary" href="#apply">참여안내 확인</a></div>
+      <div class="hero-stats">
+        <div><b>2박3일</b><span>현장 몰입교육</span></div>
+        <div><b>15H</b><span>총 교육시간</span></div>
+        <div><b>10명 내외</b><span>소규모 집중운영</span></div>
+        <div><b>NHN Cloud</b><span>본사 현장교육</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-label">FIELD-BASED LEARNING</div>
+      <div class="flow">
+        <div><b>Visit</b><span>본사 투어</span></div>
+        <div><b>Mentoring</b><span>현직자</span></div>
+        <div><b>Hands-on</b><span>핵심서비스</span></div>
+        <div><b>Project</b><span>아키텍처</span></div>
+      </div>
+      <div class="panel-card"><strong>주요 실습 기술</strong><div class="tags"><span>Instance</span><span>VPC</span><span>Storage</span><span>Database</span><span>IAM</span><span>Security</span><span>Container</span><span>Kubernetes</span><span>Monitoring</span></div></div>
+      <div class="panel-card"><strong>최종 미션</strong><div style="font-size:13px;color:#dbe8f5">서비스 요구사항을 분석하고 팀별로 NHN Cloud 기반 Cloud Native 아키텍처를 설계·발표합니다.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-head"><span class="kicker">WHY THIS PROGRAM</span><h2>교실이 아니라, 실제 클라우드 기업 현장에서 배웁니다.</h2><p>Cloud Native 기술 자체뿐 아니라 현직자가 실제로 어떻게 서비스를 구성하고 운영하는지까지 연결해 이해하는 현장형 프로그램입니다.</p></div>
+    <div class="value-grid">
+      <article class="value"><span class="no">01</span><h3>NHN Cloud 본사 투어</h3><p>실제 클라우드 기업의 업무환경과 기술운영 현장을 직접 확인합니다.</p></article>
+      <article class="value"><span class="no">02</span><h3>현직자 직무·기술 멘토링</h3><p>Cloud Native 적용사례, 관련 직무, 현업 기술역량을 현직자에게 직접 듣습니다.</p></article>
+      <article class="value"><span class="no">03</span><h3>핵심서비스 Hands-on</h3><p>Compute·Network·Storage·DB·IAM·Container를 아키텍처 관점에서 실습합니다.</p></article>
+      <article class="value"><span class="no">04</span><h3>팀 프로젝트</h3><p>서비스 요구사항에 맞는 Cloud Native 아키텍처를 직접 설계하고 발표합니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head"><span class="kicker">PROGRAM</span><h2>교육 운영 개요</h2></div>
+    <div class="info-grid">
+      <article class="info"><span>교육명</span><strong>Cloud Native 아키텍처</strong></article>
+      <article class="info"><span>교육대상</span><strong>광주대학교 인공지능 부트캠프 재학생 10명 내외</strong></article>
+      <article class="info"><span>교육기간</span><strong>2026. 11. 18.(수) ~ 11. 20.(금)</strong></article>
+      <article class="info"><span>교육형태</span><strong>2박3일 · 총 15시간</strong></article>
+      <article class="info"><span>교육장소</span><strong>NHN Cloud 본사 및 지정 교육장</strong></article>
+      <article class="info"><span>운영방식</span><strong>현장견학·멘토링·실습·프로젝트 중심</strong></article>
+    </div>
+  </div>
+</section>
+
+<section id="trip" class="section">
+  <div class="container">
+    <div class="section-head"><span class="kicker">2 NIGHTS · 3 DAYS</span><h2>2박3일 몰입형 현장교육</h2><p>현장 경험에서 시작해 실습과 프로젝트까지 단계적으로 연결합니다.</p></div>
+    <div class="trip">
+      <article class="day">
+        <span class="day-badge">DAY 1 · 11.18</span>
+        <h3>본사 투어 & 현직자 멘토링</h3>
+        <p>NHN Cloud와 클라우드 산업을 이해하는 현장 중심 오리엔테이션</p>
+        <ul><li>과정 OT 및 산업 이해</li><li>NHN Cloud 본사 투어</li><li>업무환경 이해</li><li>현직자 직무·기술 멘토링</li><li>질의응답</li></ul>
+      </article>
+      <article class="day">
+        <span class="day-badge">DAY 2 · 11.19</span>
+        <h3>Cloud Native 핵심서비스 실습</h3>
+        <p>클라우드 인프라 핵심구성요소를 연결해 이해하는 집중 실습</p>
+        <ul><li>Cloud Native 개념·서비스 구조</li><li>IAM·Instance·VPC·Subnet</li><li>Network·Security</li><li>Storage·Database</li><li>Container·Kubernetes</li><li>Load Balancing·Monitoring</li><li>프로젝트 미션 분석</li></ul>
+      </article>
+      <article class="day">
+        <span class="day-badge">DAY 3 · 11.20</span>
+        <h3>아키텍처 프로젝트 & 발표</h3>
+        <p>배운 서비스를 종합해 팀별 Cloud Native 아키텍처를 완성</p>
+        <ul><li>서비스 요구사항 정리</li><li>Cloud Native 아키텍처 설계</li><li>팀별 구조 완성</li><li>프로젝트 발표</li><li>현직자 피드백 및 평가</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head"><span class="kicker">DETAIL SCHEDULE</span><h2>세부 일정</h2></div>
+    <div class="timeline">
+      <article class="timeline-item"><div class="time">DAY 1</div><div><strong>14:00~17:00</strong></div><div><h3>NHN Cloud 본사 현장교육</h3><p>과정 OT · 본사 투어 · 업무환경 이해 · 현직자 직무·기술 멘토링 및 질의응답</p></div></article>
+      <article class="timeline-item"><div class="time">DAY 2</div><div><strong>09:00~18:00</strong></div><div><h3>Cloud Native 핵심서비스 집중 실습</h3><p>IAM · Instance · VPC · Subnet · Network · Security · Storage · Database · Container · Kubernetes · Load Balancing · Monitoring</p></div></article>
+      <article class="timeline-item"><div class="time">DAY 3</div><div><strong>11:00~13:00</strong></div><div><h3>팀 프로젝트 완성 및 발표</h3><p>Cloud Native 아키텍처 설계 · 팀별 결과물 완성 · 발표 · 현직자 피드백 · 프로젝트 평가</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="project" class="section">
+  <div class="container">
+    <div class="section-head"><span class="kicker">TEAM PROJECT</span><h2>최종 결과물은 ‘Cloud Native 아키텍처 설계안’입니다.</h2><p>단순 실습으로 끝내지 않고, 서비스 요구사항에 맞춰 어떤 클라우드 서비스를 선택하고 어떻게 연결할지 팀별로 설계합니다.</p></div>
+    <div class="output-grid">
+      <article class="output"><span class="tag">ANALYZE</span><h3>서비스 요구사항 분석</h3><p>사용자·트래픽·보안·데이터 요구사항을 분석하고 필요한 클라우드 구성요소를 도출합니다.</p></article>
+      <article class="output"><span class="tag">DESIGN</span><h3>아키텍처 설계</h3><p>Instance, VPC, Storage, DB, IAM, Container 등을 조합해 구조를 설계합니다.</p></article>
+      <article class="output"><span class="tag">PRESENT</span><h3>팀별 발표 & 피드백</h3><p>설계 근거와 구조를 발표하고 현직자의 실무 관점 피드백을 받습니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="complete" class="section alt">
+  <div class="container">
+    <div class="section-head"><span class="kicker">COMPLETION</span><h2>이수 기준</h2><p>교육 참여와 프로젝트 수행을 모두 충족해야 정상 이수로 인정됩니다.</p></div>
+    <div class="requirements">
+      <article class="req"><h3>필수 이수요건</h3><ul><li>전체 교육시간의 80% 이상 출석</li><li>NHN Cloud 본사 현장교육 참여</li><li>차시별 실습과제 수행</li><li>최종 Cloud Native 아키텍처 설계 프로젝트 참여</li><li>팀별 프로젝트 발표</li></ul></article>
+      <article class="req"><h3>평가 요소</h3><ul><li>출석 및 교육 참여도</li><li>실습과제 수행 여부</li><li>Cloud Native 아키텍처 설계 완성도</li><li>팀 프로젝트 결과 및 발표</li><li>현직자 피드백 반영</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="cta-sec">
+  <div class="container cta-card">
+    <div>
+      <span class="kicker" style="color:#84e9f1">APPLICATION</span>
+      <h2>클라우드 기업 현장에서 직접 배우고 싶다면</h2>
+      <p>Cloud Native 기술을 실제 기업 환경에서 경험하고, 현직자와 함께 아키텍처를 설계하는 2박3일 집중과정입니다.</p>
+      <div style="margin-top:20px;font-size:14px;line-height:1.9">
+        <strong>교육일정</strong> · 2026. 11. 18.(수) ~ 11. 20.(금)<br>
+        <strong>교육장소</strong> · NHN Cloud 본사 및 지정 교육장<br>
+        <strong>참여기업</strong> · NHN클라우드, 으뜸정보기술<br>
+        <strong>모집인원</strong> · 10명 내외
+      </div>
+    </div>
+    <div class="apply">
+      <strong>신청 전 확인</strong>
+      <ul>
+        <li>2박3일 총 15시간 과정</li>
+        <li>본사 투어·현직자 멘토링 포함</li>
+        <li>NHN Cloud 실습계정 활용</li>
+        <li>팀 프로젝트 및 발표 필수</li>
+        <li>참가방법: 신청서 접수</li>
+      </ul>
+      <a class="btn white" href="#top">상단으로 이동</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div><strong>광주대학교 인공지능부트캠프사업단</strong><span>2026 첨단산업 인재양성 부트캠프사업</span></div>
+    <small>※ 세부일정 및 교육내용은 운영상황에 따라 변경될 수 있습니다.</small>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+ a.addEventListener('click',e=>{
+  const t=document.querySelector(a.getAttribute('href'));
+  if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+ });
+});
+</script>
+</body>
+</html>
