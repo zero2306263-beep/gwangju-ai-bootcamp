@@ -9,75 +9,211 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-:root{--ink:#0d1b2a;--muted:#5e6b78;--line:#dce5ee;--soft:#f4f7fa;--blue:#1464f4;--navy:#071a39;--cyan:#44d5f4;--white:#fff;--shadow:0 16px 40px rgba(9,27,55,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65}.container{width:min(1180px,calc(100% - 40px));margin:0 auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(220,229,238,.9)}.nav-wrap{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}.brand-mark{width:40px;height:40px;border-radius:10px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:800;font-size:14px}.brand-text{display:flex;flex-direction:column;line-height:1.25}.brand-text strong{font-size:15px}.brand-text small{font-size:11px;color:var(--muted);margin-top:3px}.nav{display:flex;align-items:center;gap:28px}.nav a{text-decoration:none;color:#24364a;font-size:14px;font-weight:600}.nav-cta{background:var(--navy);color:white!important;padding:10px 16px;border-radius:9px}.hero{background:linear-gradient(135deg,#f4f9ff 0%,#eef4fb 55%,#eaf8fb 100%);padding:92px 0 82px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center}.eyebrow,.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}.hero h1{font-size:52px;line-height:1.18;margin:16px 0 20px;letter-spacing:-.045em}.hero h1 span{color:var(--blue)}.hero-lead{font-size:18px;color:#42556b;max-width:680px}.hero-actions{display:flex;gap:12px;margin:32px 0}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;border-radius:10px;padding:13px 22px;font-size:14px}.primary{background:var(--blue);color:white}.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.hero-meta{display:flex;gap:24px;margin-top:34px}.hero-meta div{display:flex;flex-direction:column;padding-right:24px;border-right:1px solid #cfdbe7}.hero-meta div:last-child{border-right:0}.hero-meta b{font-size:20px}.hero-meta span{font-size:12px;color:var(--muted)}.hero-panel{background:var(--navy);padding:34px;border-radius:24px;color:white;box-shadow:0 26px 60px rgba(7,26,57,.22);position:relative}.panel-tag{display:inline-block;padding:7px 11px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:12px;color:#d4e5ff}.infra-stack{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:32px 0}.infra-stack .node{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:15px 10px;text-align:center;border-radius:12px;font-weight:700}.infra-stack span{color:var(--cyan)}.cloud-box{background:#0f2a57;border:1px solid #21457a;border-radius:16px;padding:20px}.cloud-title{font-size:13px;color:#b8c8df;margin-bottom:14px}.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{font-size:12px;padding:7px 10px;background:#133665;border-radius:8px;color:#e7f2ff}.cert-card{margin-top:16px;background:white;color:var(--navy);border-radius:16px;padding:20px;display:flex;flex-direction:column}.cert-label{font-size:10px;color:var(--blue);font-weight:800;letter-spacing:.12em}.cert-card strong{font-size:23px;margin-top:3px}.cert-card small{color:#65758a;margin-top:2px}.section{padding:88px 0}.section.alt{background:var(--soft)}.section-head{max-width:760px;margin-bottom:40px}.section-head h2{font-size:36px;line-height:1.25;margin:9px 0 12px;letter-spacing:-.035em}.section-head p{color:var(--muted);font-size:16px}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info-card{background:white;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(18,45,78,.035)}.info-card span{display:block;font-size:12px;color:var(--blue);font-weight:800;margin-bottom:8px}.info-card strong{font-size:16px;line-height:1.5}.timeline{display:flex;flex-direction:column;gap:12px}.timeline-item{display:grid;grid-template-columns:64px 1fr 110px;gap:22px;align-items:center;background:white;border:1px solid #e0e8f0;border-radius:16px;padding:22px 24px}.step{width:46px;height:46px;border-radius:12px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-weight:800}.timeline-body h3{margin:0 0 4px;font-size:18px}.timeline-body p{margin:0;color:var(--muted);font-size:14px}.timeline-item time{font-weight:800;color:var(--navy);text-align:right}.schedule-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}.schedule-table{width:100%;border-collapse:collapse;background:white;min-width:720px}.schedule-table th{background:#f4f7fb;padding:15px;text-align:left;font-size:13px;color:#405167}.schedule-table td{padding:16px 15px;border-top:1px solid var(--line);font-size:14px}.schedule-table td:nth-child(1),.schedule-table td:nth-child(2){font-weight:700}.pill{display:inline-block;padding:6px 9px;border-radius:999px;background:#eaf2ff;color:var(--blue);font-size:11px;font-weight:700}.note{font-size:12px;color:var(--muted);margin-top:12px}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit-grid article{background:white;border:1px solid #e0e8f0;border-radius:18px;padding:28px}.benefit-no{font-size:12px;font-weight:800;color:var(--blue)}.benefit-grid h3{font-size:20px;margin:8px 0 10px}.benefit-grid p{font-size:14px;color:var(--muted);margin:0}.cta-section{padding:72px 0;background:white}.cta-card{background:linear-gradient(135deg,#071a39,#0f3470);color:white;border-radius:24px;padding:44px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px}.kicker.light{color:#83dbff}.cta-card h2{font-size:32px;line-height:1.25;margin:10px 0}.cta-card p{color:#c7d6e8}.cta-detail{display:flex;gap:16px;margin-top:12px;font-size:14px}.cta-detail b{min-width:72px}.cta-detail span{color:#d9e6f5}.apply-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:24px}.apply-box ul{margin:14px 0 20px;padding-left:18px;color:#dce8f6;font-size:14px}.white{background:white;color:var(--navy);width:100%}footer{border-top:1px solid var(--line);padding:26px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner div{display:flex;flex-direction:column}.footer-inner strong{font-size:13px}.footer-inner span,.footer-inner small{font-size:11px;color:var(--muted)}
-@media (max-width:900px){.nav{display:none}.hero{padding-top:60px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:40px}.info-grid,.benefit-grid{grid-template-columns:1fr 1fr}.cta-card{grid-template-columns:1fr}.timeline-item{grid-template-columns:54px 1fr}.timeline-item time{grid-column:2;text-align:left;color:var(--blue)}}
-@media (max-width:640px){.container{width:min(100% - 28px,1180px)}.hero h1{font-size:34px}.hero-lead{font-size:16px}.hero-meta{gap:14px;flex-wrap:wrap}.hero-meta div{padding-right:14px}.hero-panel{padding:24px}.info-grid,.benefit-grid{grid-template-columns:1fr}.section{padding:68px 0}.section-head h2{font-size:30px}.timeline-item{padding:18px}.cta-card{padding:28px}.footer-inner{flex-direction:column;align-items:flex-start}}
+    :root{
+      --ink:#102033;--muted:#607080;--line:#dde6ee;--soft:#f5f8fb;
+      --blue:#2764ff;--navy:#0b1f3a;--mint:#25c7b7;--sky:#eaf4ff;--white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-wrap{height:72px;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:11px}.brand-mark{width:40px;height:40px;border-radius:11px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:800}
+    .brand-text{display:flex;flex-direction:column;line-height:1.25}.brand-text strong{font-size:15px}.brand-text small{font-size:11px;color:var(--muted)}
+    .nav{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:600}.nav-cta{background:var(--navy);color:#fff;padding:10px 15px;border-radius:9px}
+    .hero{background:linear-gradient(135deg,#f3f8ff 0%,#f7fbff 48%,#eefaf8 100%);padding:88px 0 76px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .eyebrow,.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue)}
+    h1{font-size:54px;line-height:1.14;letter-spacing:-.05em;margin:14px 0 20px}
+    h1 span{color:var(--blue)}
+    .hero-lead{font-size:18px;color:#46596c;max-width:700px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-weight:700;font-size:14px}
+    .primary{background:var(--blue);color:#fff}.secondary{background:#fff;border:1px solid var(--line)}
+    .hero-meta{display:flex;gap:18px;margin-top:30px;flex-wrap:wrap}
+    .hero-meta div{min-width:120px;padding-right:18px;border-right:1px solid #ced9e5;display:flex;flex-direction:column}.hero-meta div:last-child{border-right:0}
+    .hero-meta b{font-size:21px}.hero-meta span{font-size:12px;color:var(--muted)}
+    .hero-panel{background:var(--navy);color:white;border-radius:24px;padding:30px;box-shadow:0 24px 60px rgba(11,31,58,.2)}
+    .panel-label{font-size:11px;font-weight:800;letter-spacing:.12em;color:#7ddbd2}
+    .workflow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+    .workflow div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:16px 10px;border-radius:12px;text-align:center}
+    .workflow b{display:block;font-size:14px}.workflow span{display:block;font-size:10px;color:#a9bfd5;margin-top:3px}
+    .arrowline{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:16px 0;color:#bed1e4;font-size:12px}
+    .arrowline strong{color:white}
+    .toolbox{background:#12325e;border-radius:16px;padding:18px;margin-top:8px}.toolbox-title{font-size:12px;color:#b9cae0;margin-bottom:10px}
+    .chips{display:flex;gap:7px;flex-wrap:wrap}.chips span{background:#1c477f;padding:6px 9px;border-radius:8px;font-size:11px}
+    .section{padding:84px 0}.alt{background:var(--soft)}
+    .section-head{max-width:780px;margin-bottom:38px}.section-head h2{font-size:36px;line-height:1.25;letter-spacing:-.035em;margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}
+    .highlight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .highlight{background:#fff;border:1px solid var(--line);border-radius:17px;padding:23px}.highlight strong{display:block;font-size:17px;margin:8px 0}.highlight p{font-size:13px;color:var(--muted);margin:0}.num{font-size:11px;color:var(--blue);font-weight:800}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .info-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}.info-card span{display:block;color:var(--blue);font-size:11px;font-weight:800;margin-bottom:7px}.info-card strong{font-size:15px}
+    .timeline{display:flex;flex-direction:column;gap:13px}.timeline-item{display:grid;grid-template-columns:58px 1fr 110px;gap:20px;align-items:center;background:white;border:1px solid var(--line);border-radius:16px;padding:21px 23px}
+    .step{width:45px;height:45px;border-radius:12px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-weight:800}
+    .timeline-body h3{font-size:18px;margin:0 0 5px}.timeline-body p{font-size:14px;color:var(--muted);margin:0}.timeline-item time{text-align:right;font-weight:800;color:var(--navy)}
+    .output-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .output{border:1px solid var(--line);border-radius:16px;padding:23px;background:#fff}.output .tag{display:inline-block;background:var(--sky);color:var(--blue);border-radius:999px;padding:5px 8px;font-size:10px;font-weight:800}.output h3{font-size:17px;margin:12px 0 7px}.output p{font-size:13px;color:var(--muted);margin:0}
+    .schedule-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}.schedule{width:100%;border-collapse:collapse;min-width:760px;background:white}.schedule th{background:#f3f6fa;text-align:left;padding:14px;font-size:12px}.schedule td{padding:15px 14px;border-top:1px solid var(--line);font-size:13px}.schedule td:nth-child(1),.schedule td:nth-child(2){font-weight:700}.pill{display:inline-block;background:#eaf2ff;color:var(--blue);padding:5px 8px;border-radius:999px;font-size:10px;font-weight:700}
+    .note{font-size:12px;color:var(--muted);margin-top:11px}
+    .cta{padding:70px 0}.cta-card{background:linear-gradient(135deg,#0b1f3a,#17477e);border-radius:24px;color:white;padding:40px;display:grid;grid-template-columns:1.2fr .8fr;gap:38px;align-items:center}.cta-card h2{font-size:32px;line-height:1.3;margin:9px 0}.cta-card p{color:#c8d8e8}.apply-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:17px;padding:22px}.apply-box ul{padding-left:18px;margin:12px 0 18px;font-size:13px;color:#d9e7f4}.white{background:white;color:var(--navy);width:100%}
+    footer{border-top:1px solid var(--line);padding:26px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer-inner div{display:flex;flex-direction:column}.footer-inner strong{font-size:13px}.footer-inner span,.footer-inner small{font-size:11px;color:var(--muted)}
+    @media(max-width:900px){.nav{display:none}.hero-grid{grid-template-columns:1fr}.highlight-grid,.output-grid{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:repeat(2,1fr)}.cta-card{grid-template-columns:1fr}.timeline-item{grid-template-columns:52px 1fr}.timeline-item time{grid-column:2;text-align:left;color:var(--blue)}}
+    @media(max-width:620px){.container{width:min(100% - 28px,1160px)}.hero{padding-top:60px}h1{font-size:36px}.hero-lead{font-size:16px}.workflow{grid-template-columns:1fr}.highlight-grid,.output-grid,.info-grid{grid-template-columns:1fr}.section{padding:66px 0}.section-head h2{font-size:29px}.cta-card{padding:27px}.footer-inner{flex-direction:column}}
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="홈으로">
-        <span class="brand-mark">GU</span>
-        <span class="brand-text"><strong>광주대학교</strong><small>인공지능 부트캠프사업단</small></span>
-      </a>
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="#overview">과정안내</a>
-        <a href="#curriculum">교육과정</a>
-        <a href="#schedule">일정</a>
-        <a href="#benefits">기대효과</a>
-        <a class="nav-cta" href="#apply">신청안내</a>
-      </nav>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark">GU</span>
+      <span class="brand-text"><strong>광주대학교</strong><small>인공지능 부트캠프사업단</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#about">과정소개</a>
+      <a href="#curriculum">교육과정</a>
+      <a href="#output">결과물</a>
+      <a href="#schedule">일정</a>
+      <a class="nav-cta" href="#apply">신청안내</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">2026 첨단산업 인재양성 부트캠프사업 · 몰입형 교과목</div>
+      <h1>AI 모델을 만들고,<br><span>배포·운영·업데이트</span>까지</h1>
+      <p class="hero-lead">단순히 모델을 학습하는 수업이 아닙니다. <strong>Dataset → Model v1 → 평가 → Model v2 → 비교 → Endpoint → Monitoring → Update</strong>까지 AI Model Lifecycle 전체 흐름을 직접 실습합니다.</p>
+      <div class="hero-actions"><a class="btn primary" href="#curriculum">5회차 커리큘럼 보기</a><a class="btn secondary" href="#apply">참여안내 확인</a></div>
+      <div class="hero-meta"><div><b>15H</b><span>총 교육시간</span></div><div><b>5회</b><span>회차당 3시간</span></div><div><b>15명 내외</b><span>모집인원</span></div><div><b>70%</b><span>실습·수행평가</span></div></div>
     </div>
-  </header>
-  <main id="top">
-    <section class="hero">
-      <div class="hero-grid container">
-        <div class="hero-copy">
-          <div class="eyebrow">2026 첨단산업 인재양성 부트캠프사업 · 몰입형 교과목</div>
-          <h1><span>MLOps</span> 실습과<br>NHN Cloud 자격연계를 한 번에</h1>
-          <p class="hero-lead">모델 배포·운영에 필요한 클라우드 인프라를 직접 구성하고, <strong>NHN Cloud Certified: Cloud Essentials</strong> 핵심 영역까지 함께 학습합니다.</p>
-          <div class="hero-actions"><a class="btn primary" href="#apply">교육 신청 확인</a><a class="btn secondary" href="#curriculum">커리큘럼 보기</a></div>
-          <div class="hero-meta"><div><b>15H</b><span>총 교육시간</span></div><div><b>15명 내외</b><span>모집인원</span></div><div><b>70%</b><span>실습·문제풀이</span></div></div>
-        </div>
-        <div class="hero-panel" aria-label="교육 핵심 정보">
-          <div class="panel-tag">MLOps × NHN Cloud</div>
-          <div class="infra-stack"><div class="node">Model</div><span>→</span><div class="node">Deploy</div><span>→</span><div class="node">Operate</div></div>
-          <div class="cloud-box"><div class="cloud-title">NHN Cloud 실습 영역</div><div class="chips"><span>IAM</span><span>Compute</span><span>Storage</span><span>Network</span><span>Database</span><span>Security</span><span>Monitoring</span></div></div>
-          <div class="cert-card"><span class="cert-label">CERTIFICATION LINK</span><strong>Cloud Essentials</strong><small>이론 · 실습 · 문제풀이 · 모의평가</small></div>
-        </div>
+
+    <div class="hero-panel">
+      <div class="panel-label">AI MODEL LIFECYCLE</div>
+      <div class="workflow">
+        <div><b>Learn</b><span>Model v1</span></div>
+        <div><b>Compare</b><span>Model v2</span></div>
+        <div><b>Serve</b><span>Endpoint</span></div>
       </div>
-    </section>
-    <section id="overview" class="section"><div class="container"><div class="section-head"><span class="kicker">PROGRAM</span><h2>교육 운영 개요</h2><p>클라우드 기초 이해부터 모델 운영 인프라 구성, 자격시험 대비까지 5회차 집중 실습으로 구성합니다.</p></div><div class="info-grid"><article class="info-card"><span>교육명</span><strong>MLOps 몰입형 교과목</strong></article><article class="info-card"><span>교육대상</span><strong>광주대학교 인공지능 부트캠프 재학생 15명 내외</strong></article><article class="info-card"><span>교육기간</span><strong>2026. 11. 10. ~ 11. 30.</strong></article><article class="info-card"><span>교육시간</span><strong>17:00 ~ 20:00 · 총 15시간</strong></article><article class="info-card"><span>교육장소</span><strong>광주대학교 전산관 319호</strong></article><article class="info-card"><span>진행방식</span><strong>이론 30% · 실습/문제풀이 70%</strong></article></div></div></section>
-    <section id="curriculum" class="section alt"><div class="container"><div class="section-head"><span class="kicker">CURRICULUM</span><h2>5회차 실습 중심 커리큘럼</h2><p>처음 접하는 학생도 따라갈 수 있도록 인프라 핵심 개념을 짧게 이해하고 바로 콘솔 실습으로 연결합니다.</p></div><div class="timeline">
-      <article class="timeline-item"><div class="step">01</div><div class="timeline-body"><h3>MLOps 기반 · 계정 · IAM</h3><p>과정 OT, MLOps·클라우드 기본개념, NHN Cloud Console·조직·프로젝트, IAM 및 모델 Instance 생성</p></div><time>11.10(화)</time></article>
-      <article class="timeline-item"><div class="step">02</div><div class="timeline-body"><h3>Compute · Storage 모델 운영</h3><p>Compute·Storage 구조 이해, Instance·Block Storage 구성, 모델용 Object Storage 실습</p></div><time>11.17(화)</time></article>
-      <article class="timeline-item"><div class="step">03</div><div class="timeline-body"><h3>Network · 모델 보안</h3><p>VPC·Subnet·Network 구조, Security Group·접근통제, 모델용 Load Balancer 구성</p></div><time>11.23(월)</time></article>
-      <article class="timeline-item"><div class="step">04</div><div class="timeline-body"><h3>Database · Monitoring</h3><p>모델 데이터용 Database 구조, 모니터링·보안·비용 실습, Cloud Essentials 핵심문제 풀이</p></div><time>11.24(화)</time></article>
-      <article class="timeline-item"><div class="step">05</div><div class="timeline-body"><h3>Cloud Essentials 총정리</h3><p>시험범위 총정리, 모의평가·오답정리, 자격시험 응시안내 및 최종평가</p></div><time>11.30(월)</time></article>
-    </div></div></section>
-    <section id="schedule" class="section"><div class="container"><div class="section-head"><span class="kicker">SCHEDULE</span><h2>교육 일정</h2><p>모든 회차는 17:00~20:00, 회차당 3시간으로 운영됩니다.</p></div><div class="schedule-table-wrap"><table class="schedule-table"><thead><tr><th>회차</th><th>일정</th><th>핵심 학습내용</th><th>진행</th></tr></thead><tbody>
-      <tr><td>1차시</td><td>11.10(화)</td><td>MLOps·클라우드 기본, Console·IAM, 모델 Instance</td><td><span class="pill">이론/실습</span></td></tr>
-      <tr><td>2차시</td><td>11.17(화)</td><td>Compute·Storage, Block Storage, Object Storage</td><td><span class="pill">개인실습</span></td></tr>
-      <tr><td>3차시</td><td>11.23(월)</td><td>VPC·Subnet, Security Group, Load Balancer</td><td><span class="pill">개인실습</span></td></tr>
-      <tr><td>4차시</td><td>11.24(화)</td><td>Database, Monitoring·보안·비용, 핵심문제</td><td><span class="pill">개인실습</span></td></tr>
-      <tr><td>5차시</td><td>11.30(월)</td><td>시험범위 총정리, 모의평가, 최종평가</td><td><span class="pill">평가</span></td></tr>
-    </tbody></table></div><p class="note">※ 세부일정은 운영상황에 따라 변경될 수 있습니다.</p></div></section>
-    <section id="benefits" class="section alt"><div class="container"><div class="section-head"><span class="kicker">WHY THIS COURSE</span><h2>수강 후 얻게 되는 역량</h2></div><div class="benefit-grid"><article><div class="benefit-no">01</div><h3>클라우드 인프라 기초역량</h3><p>Compute·Network·Storage·Database 등 모델 운영에 필요한 핵심 인프라를 직접 구성합니다.</p></article><article><div class="benefit-no">02</div><h3>자격취득 연계 학습</h3><p>Cloud Essentials 출제영역을 이론과 실습, 문제풀이, 모의평가로 단계적으로 정리합니다.</p></article><article><div class="benefit-no">03</div><h3>MLOps 운영 관점 확보</h3><p>모델 배포 이후 필요한 보안·모니터링·비용관리까지 운영 관점에서 실습합니다.</p></article></div></div></section>
-    <section id="apply" class="cta-section"><div class="container cta-card"><div><span class="kicker light">APPLICATION</span><h2>MLOps 몰입형 교과목 참여 안내</h2><p>모집대상은 광주대학교 인공지능 부트캠프 재학생 15명 내외이며, 참가방법은 신청서 접수 방식입니다.</p><div class="cta-detail"><b>교육장소</b><span>광주대학교 전산관 319호 (컴퓨터공학과실습실2)</span></div><div class="cta-detail"><b>참여기업</b><span>으뜸정보기술</span></div></div><div class="apply-box"><strong>신청 전 확인</strong><ul><li>총 5회차 · 15시간 과정</li><li>이론 30% / 실습·문제풀이 70%</li><li>NHN Cloud Certified: Cloud Essentials 연계</li></ul><a class="btn white" href="#top">상단으로 이동</a></div></div></section>
-  </main>
-  <footer><div class="container footer-inner"><div><strong>광주대학교 인공지능부트캠프사업단</strong><span>2026 첨단산업 인재양성 부트캠프사업</span></div><small>본 페이지의 일정 및 세부내용은 운영상황에 따라 변경될 수 있습니다.</small></div></footer>
+      <div class="arrowline"><strong>Dataset</strong> → Model v1 → 평가 → <strong>Model v2</strong> → Endpoint → Monitoring → <strong>Update</strong></div>
+      <div class="toolbox">
+        <div class="toolbox-title">실습에서 사용하는 도구</div>
+        <div class="chips"><span>NHN Cloud AI EasyMaker</span><span>Jupyter</span><span>Python</span><span>Scikit-learn</span><span>GitHub</span><span>Gradio</span><span>Slack</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-head"><span class="kicker">WHY MLOPS</span><h2>모델을 만드는 것에서 끝내지 않습니다.</h2><p>AI 서비스가 실제로 운영되려면 학습한 모델을 비교하고, 배포하고, 상태를 확인하고, 새로운 버전으로 업데이트하는 과정이 필요합니다. 이번 과정은 그 흐름을 입문자 수준에서 직접 경험하도록 설계했습니다.</p></div>
+    <div class="highlight-grid">
+      <article class="highlight"><span class="num">01</span><strong>Model v1 만들기</strong><p>제공된 Dataset과 Notebook을 활용해 Baseline Model을 학습하고 정확도·F1을 확인합니다.</p></article>
+      <article class="highlight"><span class="num">02</span><strong>Model v2 비교</strong><p>주요 파라미터를 바꿔 두 번째 모델을 만들고 v1/v2 성능을 직접 비교합니다.</p></article>
+      <article class="highlight"><span class="num">03</span><strong>AI 서비스 배포</strong><p>선정한 모델을 Endpoint로 배포하고 실제 추론 결과를 확인합니다.</p></article>
+      <article class="highlight"><span class="num">04</span><strong>모니터링·업데이트</strong><p>운영 상태를 확인한 뒤 Model v1에서 v2로 업데이트하고 결과를 다시 비교합니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head"><span class="kicker">PROGRAM</span><h2>교육 운영 개요</h2></div>
+    <div class="info-grid">
+      <article class="info-card"><span>교육명</span><strong>MLOps 몰입형 교과목</strong></article>
+      <article class="info-card"><span>교육대상</span><strong>광주대학교 인공지능 부트캠프 재학생 15명 내외</strong></article>
+      <article class="info-card"><span>교육기간</span><strong>2026. 11. 10. ~ 11. 30.</strong></article>
+      <article class="info-card"><span>교육시간</span><strong>17:30 ~ 20:30 · 총 15시간</strong></article>
+      <article class="info-card"><span>교육장소</span><strong>광주대학교 전산관 319호</strong></article>
+      <article class="info-card"><span>진행방식</span><strong>이론 30% · 실습/수행평가 70%</strong></article>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum" class="section">
+  <div class="container">
+    <div class="section-head"><span class="kicker">CURRICULUM</span><h2>5회차 동안 하나의 MLOps Workflow를 완성합니다.</h2><p>각 회차 결과물이 다음 회차로 이어지는 연속형 실습으로 구성됩니다.</p></div>
+    <div class="timeline">
+      <article class="timeline-item"><div class="step">01</div><div class="timeline-body"><h3>MLOps 기초 · NHN Cloud 환경 이해</h3><p>Cloud/MLOps 기본개념 → AI Model Lifecycle → AI EasyMaker/Jupyter → Dataset·Object Storage 구조</p></div><time>11.10(화)</time></article>
+      <article class="timeline-item"><div class="step">02</div><div class="timeline-body"><h3>Model v1 개발 및 평가</h3><p>Dataset 구조·전처리 → Scikit-learn Baseline Model 학습 → 정확도·F1 평가 → 모델 저장·GitHub 기록</p></div><time>11.17(화)</time></article>
+      <article class="timeline-item"><div class="step">03</div><div class="timeline-body"><h3>Experiment · Model v2 비교</h3><p>v1 결과 확인 → 파라미터 변경 → Model v2 학습·평가 → v1/v2 지표 비교 및 버전 기록</p></div><time>11.23(월)</time></article>
+      <article class="timeline-item"><div class="step">04</div><div class="timeline-body"><h3>Model Serving · AI Demo</h3><p>Serving·Endpoint 이해 → AI EasyMaker Endpoint 배포 → 추론 확인 → Gradio AI Demo 구현</p></div><time>11.24(화)</time></article>
+      <article class="timeline-item"><div class="step">05</div><div class="timeline-body"><h3>Monitoring · Model Update · 최종평가</h3><p>Endpoint 상태 확인 → v1→v2 업데이트 → 재추론·결과 비교 → 전체 Workflow·AI Demo 수행평가</p></div><time>11.30(월)</time></article>
+    </div>
+  </div>
+</section>
+
+<section id="output" class="section alt">
+  <div class="container">
+    <div class="section-head"><span class="kicker">YOUR OUTPUT</span><h2>수업이 끝나면 이런 결과물이 남습니다.</h2><p>학생이 실제로 확인하고 설명할 수 있는 결과물을 중심으로 운영합니다.</p></div>
+    <div class="output-grid">
+      <article class="output"><span class="tag">MODEL</span><h3>Model v1 / v2 비교표</h3><p>정확도·F1 등 평가 결과를 비교하고 어떤 모델을 선택했는지 근거를 정리합니다.</p></article>
+      <article class="output"><span class="tag">SERVING</span><h3>Endpoint 추론 결과</h3><p>선정한 모델을 Endpoint에 배포하고 실제 입력에 대한 예측 결과를 확인합니다.</p></article>
+      <article class="output"><span class="tag">DEMO</span><h3>Gradio AI Demo</h3><p>제공된 Template을 연결해 입력과 예측 결과를 확인할 수 있는 간단한 AI Demo를 구현합니다.</p></article>
+      <article class="output"><span class="tag">WORKFLOW</span><h3>MLOps 전체 Workflow</h3><p>Dataset부터 모델 업데이트까지 전체 과정을 단계별로 정리하고 최종 수행평가에 활용합니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="section">
+  <div class="container">
+    <div class="section-head"><span class="kicker">SCHEDULE</span><h2>교육 일정</h2><p>각 회차 17:30~20:30, 3시간씩 총 15시간 운영합니다.</p></div>
+    <div class="schedule-wrap">
+      <table class="schedule">
+        <thead><tr><th>회차</th><th>일정</th><th>핵심주제</th><th>주요 실습</th><th>방식</th></tr></thead>
+        <tbody>
+          <tr><td>1차시</td><td>11.10(화)</td><td>MLOps 기초</td><td>AI EasyMaker·Jupyter·Dataset·Object Storage</td><td><span class="pill">이론/실습</span></td></tr>
+          <tr><td>2차시</td><td>11.17(화)</td><td>Model v1</td><td>전처리·Baseline Model·정확도/F1·GitHub 기록</td><td><span class="pill">개인실습</span></td></tr>
+          <tr><td>3차시</td><td>11.23(월)</td><td>Experiment</td><td>파라미터 변경·Model v2·v1/v2 비교</td><td><span class="pill">개인실습</span></td></tr>
+          <tr><td>4차시</td><td>11.24(화)</td><td>Model Serving</td><td>Endpoint 배포·추론·Gradio AI Demo</td><td><span class="pill">개인실습</span></td></tr>
+          <tr><td>5차시</td><td>11.30(월)</td><td>Monitoring·Update</td><td>상태 확인·v1→v2 업데이트·최종 Workflow 평가</td><td><span class="pill">발표/평가</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※ 세부일정은 운영상황에 따라 변경될 수 있습니다.</p>
+  </div>
+</section>
+
+<section id="apply" class="cta">
+  <div class="container cta-card">
+    <div>
+      <span class="kicker" style="color:#7ddbd2">APPLICATION</span>
+      <h2>AI 모델을 ‘운영’하는 경험까지 해보고 싶다면</h2>
+      <p>클라우드와 MLOps가 처음이어도 사전 구성된 실습환경과 예제 Notebook, Template을 활용해 단계별로 실습할 수 있습니다.</p>
+      <div style="margin-top:20px;font-size:14px;line-height:1.9"><strong>교육장소</strong> · 광주대학교 전산관 319호<br><strong>참여기업</strong> · 페픽<br><strong>참가방법</strong> · 신청서 접수</div>
+    </div>
+    <div class="apply-box">
+      <strong>신청 전 확인</strong>
+      <ul>
+        <li>총 5회차 · 15시간 과정</li>
+        <li>매 회차 17:30~20:30 진행</li>
+        <li>실습·수행평가 70% 중심</li>
+        <li>교육생 노트북 활용</li>
+        <li>NHN Cloud AI EasyMaker·Jupyter 실습</li>
+      </ul>
+      <a class="btn white" href="#top">상단으로 이동</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div><strong>광주대학교 인공지능부트캠프사업단</strong><span>2026 첨단산업 인재양성 부트캠프사업</span></div>
+    <small>본 페이지의 세부일정 및 교육내용은 운영상황에 따라 변경될 수 있습니다.</small>
+  </div>
+</footer>
+
 <script>
-const links = document.querySelectorAll('a[href^="#"]');
-links.forEach(link => link.addEventListener('click', e => {
-  const id = link.getAttribute('href');
-  const target = document.querySelector(id);
-  if (target) {
-    e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
 </script>
 </body>
 </html>
