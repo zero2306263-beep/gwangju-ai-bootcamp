@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="theme-color" content="#173a65">
+<meta name="description" content="광주대학교 AI부트캠프사업단 몰입형 교과목 이수내역 조회">
+<title>몰입형 교과목 이수내역 조회 | 광주대학교 AI부트캠프</title>
+<style>
+:root{--navy:#142d51;--blue:#245db6;--ink:#20334e;--muted:#65788e;--border:#e2eaf2;--bg:#f5f8fc;--green:#157a56;--orange:#946216}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;word-break:keep-all}
+button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:inherit;text-decoration:none}
+.topline{height:5px;background:linear-gradient(90deg,#245cba,#2da6a8,#99d7c1)}header{background:white;border-bottom:1px solid var(--border)}.header{max-width:1090px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:16px}.symbol{display:grid;place-items:center;background:var(--navy);color:white;border-radius:12px;width:43px;height:43px;font-weight:900}.brand small{display:block;color:var(--muted);font-weight:500;font-size:11px;letter-spacing:.5px}.back{font-size:12px;font-weight:700;color:var(--blue)}
+main{max-width:1090px;margin:0 auto;padding:26px 22px 56px}.hero{padding:43px 42px;background:linear-gradient(115deg,#163963,#102a4e 70%,#204c7e);color:white;border-radius:20px;position:relative;overflow:hidden}.hero:before{content:"";width:300px;height:300px;border-radius:50%;border:1px solid #ffffff20;position:absolute;right:-60px;top:-150px;box-shadow:0 0 0 50px #ffffff06,0 0 0 100px #ffffff06}.eyebrow{color:#b8d9fa;font-size:11px;font-weight:800;letter-spacing:2px}.hero h1{font-size:32px;line-height:1.35;letter-spacing:-1px;margin:12px 0}.hero p{font-size:13px;color:#d7e2ef;margin:0}
+.statusbanner{margin:18px 0;padding:12px 16px;border-radius:11px;background:#fff9e9;border:1px solid #eeddb1;color:#7e591e;font-size:12px}.statusbanner strong{font-weight:900}
+.columns{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,1fr);gap:18px;margin-top:18px;align-items:start}.panel{background:white;border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:0 13px 32px rgba(14,47,85,.04)}h2{margin:0 0 4px;font-size:20px;letter-spacing:-.7px}.sub{font-size:13px;color:var(--muted);margin:0 0 24px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}.field input{height:49px;width:100%;border:1px solid #c7d5e5;border-radius:10px;padding:0 13px;outline:0;background:white}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e7efff}
+.submit{width:100%;border:0;border-radius:11px;margin-top:19px;background:var(--blue);color:white;min-height:50px;font-size:14px;font-weight:900}.submit:hover{background:#184787}.micro{color:#76879c;font-size:11px;margin-top:13px}.micro strong{color:#385b85}.message{display:none;border-radius:10px;margin-top:15px;padding:11px 13px;font-size:12px}.message.error{display:block;background:#fff0f0;color:#9a3541;border:1px solid #f1cfd0}.message.ok{display:block;background:#effaf4;color:#13704e;border:1px solid #c4e6d3}.steps{list-style:none;padding:0;margin:16px 0 0}.steps li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}.steps li:last-child{border:0}.num{display:grid;place-items:center;border-radius:50%;width:27px;height:27px;flex:0 0 27px;background:#eaf2ff;color:var(--blue);font-weight:800;font-size:12px}.steptext strong{font-size:13px}.steptext p{margin:2px 0 0;color:var(--muted);font-size:12px}.smallnote{padding:14px;background:#f5f8fc;border-radius:10px;color:#6a7e96;font-size:11px;margin-top:14px}
+.results{display:none;margin-top:25px}.results.active{display:block}.rhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.reset{border:1px solid #d4e0ed;background:white;color:var(--blue);border-radius:9px;font-weight:800;padding:8px 12px;font-size:12px}.identity{background:#eaf2ff;border-radius:12px;padding:14px 18px;font-size:13px;display:flex;gap:24px;flex-wrap:wrap;align-items:center}.identity strong{font-size:16px}.identity span{color:#516b89}.course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}.course{background:white;border:1px solid var(--border);border-radius:15px;padding:21px;min-height:170px}.coursebar{display:flex;align-items:center;justify-content:space-between;gap:12px}.coursebar small{font-size:10px;color:#6c86a7;font-weight:800;letter-spacing:1px}.badge{font-weight:900;border-radius:99px;padding:5px 10px;font-size:11px;white-space:nowrap}.badge.done{background:#e6f7ee;color:#167552}.badge.pending{background:#fff3d9;color:#88600d}.badge.failed{background:#eaf0f5;color:#62768b}.course h3{font-size:18px;letter-spacing:-.5px;margin:12px 0 16px;line-height:1.4}dl{display:grid;grid-template-columns:65px auto;gap:6px 12px;margin:0;font-size:12px}dt{color:#8191a5}dd{margin:0;color:#4f6582;font-weight:700}.footer-notice{margin-top:18px;font-size:12px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 17px;color:#61758c}footer{text-align:center;font-size:11px;color:#8292a6;padding:20px;border-top:1px solid var(--border)}
+@media(max-width:760px){.header{padding:14px}.brand{font-size:13px}.brand small{font-size:9px}.back{font-size:11px}main{padding:15px 13px 35px}.hero{padding:29px 23px}.hero h1{font-size:25px}.columns{grid-template-columns:1fr}.formrow,.course-grid{grid-template-columns:1fr}.panel{padding:22px}.rhead h2{font-size:18px}.identity{gap:7px}}
+@media print{header,.hero,.columns,.statusbanner,.rhead button,.footer-notice,footer{display:none!important}.results{display:block!important}.course-grid{grid-template-columns:repeat(2,1fr)}}
+
+.inline-results{margin-top:22px;}
+.inline-results[hidden]{display:none!important;}
+.inline-results .rhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;}
+.inline-results .rhead h2{margin:0;}
+.inline-results .reset{border:1px solid #d1ddec;background:white;color:#245db6;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:800;cursor:pointer}
+.inline-results .identity{background:#eaf2ff;border-radius:12px;padding:16px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;}
+.inline-results .identity strong{font-size:16px}
+.inline-results .identity span{color:#4e6483}
+.inline-results .course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:15px;}
+.inline-results .course{background:white;border:1px solid #dce6f3;border-radius:14px;padding:21px;}
+.inline-results .course h3{margin:10px 0 15px;font-size:18px;}
+.inline-results .course dl{display:grid;grid-template-columns:70px auto;gap:7px 12px;font-size:12px;margin:0;}
+.inline-results .course dt{color:#7188a4;}
+.inline-results .course dd{font-weight:700;margin:0;}
+.inline-results .badge{display:inline-block;border-radius:99px;padding:5px 10px;font-size:11px;font-weight:800;}
+.inline-results .badge.done{background:#e8f7ef;color:#187a55}
+.inline-results .badge.pending{background:#fff2d5;color:#8d650e}
+.inline-results .badge.failed{background:#edf2f8;color:#5c6c7e}
+@media(max-width:760px){.inline-results .course-grid{grid-template-columns:1fr}.inline-results .identity{display:block}.inline-results .identity span{display:block;margin-top:5px}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header><div class="header"><div class="brand"><div class="symbol" aria-hidden="true">GU</div><div>광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></div></div><a class="back" href="../">사업단 홈페이지</a></div></header>
+<main>
+  <section class="hero"><div class="eyebrow">COURSE COMPLETION LOOKUP</div><h1>몰입형 교과목<br>이수내역 조회</h1><p>사업단에서 등록한 교과목별 이수내역을 학생이 확인하는 페이지입니다.</p></section>
+  <div class="statusbanner" id="integration-status" role="status"><strong>한 화면 조회 방식</strong> 학생 이수내역이 아래에 바로 표시됩니다. 관리용 Google Sheets는 비공개로 유지됩니다.</div>
+  <div class="columns">
+    <section class="panel" aria-labelledby="lookup-title">
+      <h2 id="lookup-title">학생 이수내역 확인</h2>
+      <p class="sub">학번과 학생명을 입력하면 본인의 소속학과, 교과목명, 이수상태를 확인할 수 있습니다.</p>
+      <form id="lookup" autocomplete="off">
+        <div class="formrow">
+          <div class="field"><label for="no">학번</label><input id="no" name="studentId" required inputmode="numeric" pattern="[0-9]{6,12}" maxlength="12" placeholder="학번 입력" autocomplete="off"></div>
+          <div class="field"><label for="name">학생명</label><input id="name" name="studentName" required maxlength="30" placeholder="학생명 입력" autocomplete="off"></div>
+        </div>
+        <button class="submit" type="submit" id="submit">내 이수내역 조회</button>
+
+      </form>
+      <p class="micro">이수현황 확인 전용으로, 공식 증명서 발급이나 성적증명서 조회 기능은 포함하지 않습니다.</p>
+      <div class="message" id="message" aria-live="polite"></div>
+    </section>
+    <aside class="panel">
+      <h2>조회 안내</h2>
+      <ol class="steps">
+        <li><span class="num">1</span><div class="steptext"><strong>학번과 학생명 입력</strong><p>본인 명단에 등록된 정보와 일치해야 합니다.</p></div></li>
+        <li><span class="num">2</span><div class="steptext"><strong>등록된 이수내역 조회</strong><p>비공개 시트의 일치하는 학생 기록만 표시합니다.</p></div></li>
+        <li><span class="num">3</span><div class="steptext"><strong>정보 오류 시 사업단 문의</strong><p>학과·교육과정·이수상태 오류를 담당자에게 확인합니다.</p></div></li>
+      </ol>
+      <div class="smallnote">학번과 학생명만 사용하는 방식은 강력한 본인인증이 아닙니다. 본인 이외 학생의 정보를 조회하면 안 됩니다.</div>
+    </aside>
+  </div>
+  <div class="footer-notice">사업단에서 보유한 학생명단은 비공개 Google Sheets로 관리합니다. GitHub에는 학생정보를 업로드하지 않습니다.</div>
+  <section class="inline-results" id="results" hidden aria-live="polite">
+    <div class="rhead"><h2>나의 몰입형 교과목 이수내역</h2><button class="reset" id="reset" type="button">다른 학번 조회</button></div>
+    <div class="identity" id="identity"></div>
+    <div class="course-grid" id="course-grid"></div>
+    <p class="micro" style="margin-top:14px">본 결과는 교육 이수현황 확인용이며 공식 증명서는 아닙니다.</p>
+  </section>
+</main>
+<footer>광주대학교 AI부트캠프사업단 · 몰입형 교과목 이수내역 확인</footer>
+
+
+<script>
+(() => {
+  'use strict';
+  const API='https://gu-bootcamp-lookup-api.vercel.app/api/lookup';
+  const form=document.getElementById('lookup');
+  const submit=document.getElementById('submit');
+  const msg=document.getElementById('message');
+  const result=document.getElementById('results');
+  const identity=document.getElementById('identity');
+  const grid=document.getElementById('course-grid');
+  function node(tag,text,cls){
+    const n=document.createElement(tag);
+    if(text!==undefined && text!==null)n.textContent=String(text);
+    if(cls)n.className=cls;
+    return n;
+  }
+  function notify(message,kind){
+    msg.textContent=message;
+    msg.className='message '+kind;
+    msg.style.display='block';
+  }
+  function clearResults(){result.hidden=true;identity.replaceChildren();grid.replaceChildren();}
+  function render(data){
+    const student=data.student||{};
+    const courses=Array.isArray(data.courses)?data.courses:[];
+    if(!courses.length)throw new Error('조회할 이수내역이 없습니다.');
+    identity.replaceChildren();
+    identity.append(
+      node('strong',student.name||'학생'),
+      node('span','학번 '+(student.studentId||'')),
+      node('span','학과 '+(student.department||'미등록')),
+      node('span','이수 교과목 '+courses.length+'건')
+    );
+    grid.replaceChildren();
+    for(const c of courses){
+      const card=node('article',null,'course');
+      const badge=node('span',c.status||'확인중','badge '+(c.status==='이수완료'?'done':c.status==='미이수'?'failed':'pending'));
+      const title=node('h3',c.name||'교과목 미등록');
+      const dl=node('dl');
+      [['이수상태',c.status||'확인중'],['이수시간',c.hours||'미등록'],['교육기간',c.period||'미등록']].forEach(([label,value])=>{
+        dl.append(node('dt',label),node('dd',value));
+      });
+      card.append(badge,title,dl);
+      grid.append(card);
+    }
+    result.hidden=false;
+    result.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  form.addEventListener('submit',async (event)=>{
+    event.preventDefault();
+    clearResults();
+    const studentId=document.getElementById('no').value.trim();
+    const studentName=document.getElementById('name').value.trim();
+    if(!/^\d{6,12}$/.test(studentId)||studentName.length<2){
+      notify('학번과 학생명을 정확하게 입력해 주세요.','error');return;
+    }
+    submit.disabled=true;
+    submit.textContent='이수내역 조회 중...';
+    notify('사업단 이수내역을 확인하고 있습니다.','ok');
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),18000);
+    try{
+      const response=await fetch(API,{
+        method:'POST',mode:'cors',credentials:'omit',cache:'no-store',
+        referrerPolicy:'no-referrer',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({studentId,studentName}),
+        signal:controller.signal
+      });
+      const data=await response.json();
+      if(!response.ok)throw new Error(data.message||'이수내역 조회 중 오류가 발생했습니다.');
+      render(data);
+      notify('이수내역 '+data.courses.length+'건이 조회되었습니다.','ok');
+    }catch(error){
+      notify(error.name==='AbortError'?'조회 시간이 초과되었습니다. 잠시 후 다시 시도해 주세요.':
+        error.message||'조회 서버 연결에 실패했습니다.','error');
+    }finally{
+      clearTimeout(timeout);
+      submit.disabled=false;
+      submit.textContent='내 이수내역 조회';
+    }
+  });
+  document.getElementById('reset').addEventListener('click',()=>{
+    clearResults();form.reset();msg.textContent='';msg.className='message';msg.style.display='none';
+    document.getElementById('no').focus();window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>
