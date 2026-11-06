@@ -1,0 +1,9 @@
+{
+  "name": "gu-bootcamp-lookup-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Secure student course-completion lookup API",
+  "engines": {
+    "node": "22.x"
+  }
+}
