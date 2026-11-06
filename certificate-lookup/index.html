@@ -26,45 +26,77 @@ main{max-width:1090px;margin:0 auto;padding:26px 22px 56px}.hero{padding:43px 42
 <header><div class="header"><div class="brand"><div class="symbol" aria-hidden="true">GU</div><div>광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></div></div><a class="back" href="../">사업단 홈페이지</a></div></header>
 <main>
 <section class="hero"><div class="eyebrow">COURSE COMPLETION LOOKUP</div><h1>몰입형 교과목<br>이수내역 조회</h1><p>사업단에 등록된 학생명·학번·소속학과 및 교과목별 이수상태를 확인하는 학생 전용 화면입니다.</p></section>
-<div class="statusbanner" role="note"><strong>현재 시연용 페이지입니다.</strong> 실제 학생 명단은 연결되지 않았습니다. 테스트 정보로만 조회할 수 있으며, 공식 이수확인 자료로 사용할 수 없습니다.</div>
+<div class="statusbanner" role="note" id="integration-status"><strong>서버 연결 확인 중입니다.</strong> 본인인증 설정과 이수자 명단 연결이 완료되어야 조회할 수 있습니다.</div>
 <div class="columns">
-<section class="panel" aria-labelledby="lookup-heading"><h2 id="lookup-heading">학생 이수내역 확인</h2><p class="sub">본인의 학번과 학생명을 입력한 후 조회해 주세요.</p>
+<section class="panel" aria-labelledby="lookup-heading"><h2 id="lookup-heading">학생 이수내역 확인</h2><p class="sub">Google 계정으로 본인인증한 후 학번과 학생명을 입력해 주세요.</p>
+<div id="login-panel" style="background:#f4f8ff;border:1px solid #dce9fa;border-radius:10px;padding:14px;margin-bottom:18px;font-size:12px;">
+<strong style="display:block;margin-bottom:9px;">1. Google 계정 본인인증</strong><div id="google-signin"></div><div id="login-status" aria-live="polite" style="color:#607795;">인증 설정 확인 중입니다.</div>
+</div><p style="margin:0 0 12px;font-size:12px;font-weight:800;">2. 학번·학생명 조회</p>
 <form id="lookup" autocomplete="off">
 <div class="formrow">
 <div class="field"><label for="no">학번</label><input id="no" name="no" required inputmode="numeric" pattern="[0-9]{6,12}" maxlength="12" placeholder="학번 입력(숫자)" autocomplete="off"></div>
 <div class="field"><label for="name">학생명</label><input id="name" name="name" required maxlength="30" placeholder="학생명 입력" autocomplete="off"></div>
-</div><button class="submit" type="submit" id="submit">내 이수내역 조회</button>
-</form><p class="micro">시연용 테스트 정보: <strong>99990001 / 홍길동</strong>, <strong>99990002 / 김가상</strong>, <strong>99990003 / 이가상</strong></p><div class="message" id="message" role="status" aria-live="polite"></div></section>
-<aside class="panel"><h2>조회 안내</h2><ol class="steps"><li><span class="num">1</span><div class="steptext"><strong>학번·학생명 입력</strong><p>본인의 등록 정보를 정확히 입력합니다.</p></div></li><li><span class="num">2</span><div class="steptext"><strong>교과목별 이수내역 확인</strong><p>조회된 교과목명, 이수상태 및 교육정보를 확인합니다.</p></div></li><li><span class="num">3</span><div class="steptext"><strong>오류·누락 시 사업단 문의</strong><p>등록정보와 실제 수강내역이 다른 경우 담당자에게 문의합니다.</p></div></li></ol><div class="smallnote">학생 조회 전용 화면으로, 관리자의 명단 업로드 기능과 전체 학생명단은 공개하지 않습니다. 정식 운영 전 대학 통합로그인 등 본인인증 연동이 필요합니다.</div></aside>
+</div><button class="submit" type="submit" id="submit" disabled>내 이수내역 조회</button>
+</form><p class="micro">이수내역은 사업단의 비공개 명단을 기준으로 조회됩니다. <strong>학생명과 학번만으로는 조회할 수 없으며</strong>, 등록된 인증이메일로 Google 로그인을 완료해야 합니다.</p><div class="message" id="message" role="status" aria-live="polite"></div></section>
+<aside class="panel"><h2>조회 안내</h2><ol class="steps"><li><span class="num">1</span><div class="steptext"><strong>학번·학생명 입력</strong><p>본인의 등록 정보를 정확히 입력합니다.</p></div></li><li><span class="num">2</span><div class="steptext"><strong>교과목별 이수내역 확인</strong><p>조회된 교과목명, 이수상태 및 교육정보를 확인합니다.</p></div></li><li><span class="num">3</span><div class="steptext"><strong>오류·누락 시 사업단 문의</strong><p>등록정보와 실제 수강내역이 다른 경우 담당자에게 문의합니다.</p></div></li></ol><div class="smallnote">학생 조회 전용 화면입니다. 관리자 명단과 전체 학생명단은 공개되지 않으며, 본인 Google 계정과 사업단에 등록된 이메일이 일치하는 경우에만 조회됩니다.</div></aside>
 </div>
 <section class="results" id="results" aria-live="polite"><div class="rhead"><h2>조회 결과 <small style="font-size:12px;color:#8a6b2d">시연 데이터</small></h2><button class="reset" id="reset" type="button">다른 학번 조회</button></div><div class="identity" id="identity"></div><div class="course-grid" id="course-grid"></div></section>
-<div class="footer-notice">본 페이지는 광주대학교 AI부트캠프 몰입형 교과목 이수내역 조회 시스템의 시안입니다. 실제 운영을 위해 사업단 관리 명단 및 인증된 조회 API 연결이 필요합니다.</div>
+<div class="footer-notice">본인인증에 사용한 이메일이 사업단 등록 이메일과 다르거나 이수내역이 누락된 경우 사업단에 문의해 주세요. 조회 결과는 사업단 등록 현황을 안내하는 자료이며, 공식 증빙 여부는 사업단 기준에 따릅니다.</div>
 </main><footer>광주대학교 AI부트캠프사업단 · 몰입형 교과목 이수내역 확인</footer>
 <script>
 (function(){
 'use strict';
-const records=[
-{no:'99990001',name:'홍길동',dept:'컴퓨터공학과',course:'멀티클라우드 운영',status:'이수완료',hours:'15',period:'2026. 11. 01. ~ 11. 05.'},
-{no:'99990001',name:'홍길동',dept:'컴퓨터공학과',course:'Cloud Native 아키텍처',status:'확인중',hours:'15',period:'2026. 11. 18. ~ 11. 20.'},
-{no:'99990002',name:'김가상',dept:'컴퓨터공학과',course:'MLOps',status:'이수완료',hours:'15',period:'2026. 11. 16. ~ 11. 30.'},
-{no:'99990003',name:'이가상',dept:'기계자동차공학부',course:'DigitalTwin기반 공정시뮬레이션',status:'확인중',hours:'15',period:'2026. 11. 18. ~ 12. 04.'}
-];
-const form=document.getElementById('lookup'),msg=document.getElementById('message'),section=document.getElementById('results');
-form.addEventListener('submit',function(e){e.preventDefault();msg.textContent='';msg.className='message';section.classList.remove('active');
-const no=document.getElementById('no').value.trim(),name=document.getElementById('name').value.trim().replace(/\s+/g,'');
-if(!/^\d{6,12}$/.test(no)||!name){show('학번과 학생명을 정확히 입력해 주세요.','error');return}
-const found=records.filter(r=>r.no===no&&r.name.replace(/\s+/g,'')===name);
-if(!found.length){show('입력한 학번과 이름에 해당하는 시연 자료가 없습니다.','error');return}
-const meta=document.getElementById('identity');meta.replaceChildren();
-const bold=document.createElement('strong');bold.textContent=name[0]+'*'.repeat(Math.max(1,name.length-1))+' 학생';meta.append(bold);
-const department=document.createElement('span');department.textContent='소속학과 '+(found[0].dept||'미등록');meta.append(department);
-const info=document.createElement('span');info.textContent='학번 '+no+' · 등록 교과목 '+found.length+'건';meta.append(info);
-const area=document.getElementById('course-grid');area.replaceChildren();
-found.forEach(r=>{const card=document.createElement('article');card.className='course';const bar=document.createElement('div');bar.className='coursebar';const hint=document.createElement('small');hint.textContent='AI BOOTCAMP';const badge=document.createElement('span');badge.className='badge '+(r.status==='이수완료'?'done':r.status==='미이수'?'failed':'pending');badge.textContent=r.status;bar.append(hint,badge);
-const title=document.createElement('h3');title.textContent=r.course;const dl=document.createElement('dl');[['이수시간',r.hours+'시간'],['교육기간',r.period]].forEach(pair=>{const dt=document.createElement('dt');dt.textContent=pair[0];const dd=document.createElement('dd');dd.textContent=pair[1];dl.append(dt,dd)});card.append(bar,title,dl);area.append(card)});
-section.classList.add('active');show('시연 이수내역 '+found.length+'건이 조회되었습니다.','ok');section.scrollIntoView({behavior:'smooth',block:'start'});
+const API_BASE='https://gu-bootcamp-lookup-api.vercel.app';
+const form=document.getElementById('lookup');
+const msg=document.getElementById('message');
+const section=document.getElementById('results');
+const status=document.getElementById('integration-status');
+const loginStatus=document.getElementById('login-status');
+const submit=document.getElementById('submit');
+let credential=null;
+function show(s,k){msg.textContent=s;msg.className='message '+k;}
+function setStatus(text){status.textContent=text;}
+function loadGoogle(clientId){
+ const script=document.createElement('script');script.src='https://accounts.google.com/gsi/client';script.async=true;
+ script.onload=()=>{if(!window.google?.accounts?.id){loginStatus.textContent='Google 로그인 서비스를 사용할 수 없습니다.';return;}
+ window.google.accounts.id.initialize({client_id:clientId,callback:(response)=>{
+ credential=response.credential||null;
+ if(credential){submit.disabled=false;loginStatus.textContent='Google 계정 인증이 완료됐습니다. 이제 학번과 학생명을 입력해 주세요.';show('본인인증을 완료했습니다.','ok');}
+ }});
+ window.google.accounts.id.renderButton(document.getElementById('google-signin'),{theme:'outline',size:'large',text:'signin_with',width:250});
+ loginStatus.textContent='사업단에 인증이메일로 등록된 Google 계정으로 로그인해 주세요.';
+ };
+ script.onerror=()=>{loginStatus.textContent='Google 로그인 서비스를 불러오지 못했습니다.';};document.head.appendChild(script);
+}
+fetch(API_BASE+'/api/config',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('config_http_'+r.status);return r.json();}).then(config=>{
+ if(!config.configured||!config.googleClientId){setStatus('서버 설치는 완료됐으나 사업단의 Google 본인인증 및 시트 접근 설정이 아직 완료되지 않았습니다. 학생 조회는 현재 중지되어 있습니다.');loginStatus.textContent='관리자의 인증 설정 완료 후 이용할 수 있습니다.';return;}
+ setStatus('학생 조회 서버와 연결되었습니다. Google 계정 인증 후 이수내역을 조회할 수 있습니다.');loadGoogle(config.googleClientId);
+}).catch(()=>{setStatus('조회 서버 연결을 확인할 수 없습니다. 사업단 관리자에게 문의해 주세요.');loginStatus.textContent='현재는 조회를 진행할 수 없습니다.';});
+form.addEventListener('submit',async(e)=>{
+ e.preventDefault();msg.textContent='';msg.className='message';section.classList.remove('active');
+ if(!credential){show('먼저 Google 계정 본인인증을 완료해 주세요.','error');return}
+ const no=document.getElementById('no').value.trim(),name=document.getElementById('name').value.trim().replace(/\s+/g,'');
+ if(!/^\d{6,12}$/.test(no)||name.length<2){show('학번과 학생명을 정확히 입력해 주세요.','error');return}
+ submit.disabled=true;submit.textContent='조회 중...';
+ try{
+  const response=await fetch(API_BASE+'/api/lookup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({studentId:no,studentName:name,credential}),cache:'no-store'});
+  const data=await response.json();
+  if(!response.ok){if(response.status===401){credential=null;loginStatus.textContent='로그인 유효기간이 만료됐습니다. Google 계정으로 다시 로그인해 주세요.'}throw new Error(data.message||'이수내역을 조회하지 못했습니다.');}
+  const student=data.student||{};const courses=Array.isArray(data.courses)?data.courses:[];
+  const meta=document.getElementById('identity');meta.replaceChildren();
+  const bold=document.createElement('strong');bold.textContent=student.displayName||'학생';meta.append(bold);
+  const dept=document.createElement('span');dept.textContent='소속학과 '+(student.department||'미등록');meta.append(dept);
+  const info=document.createElement('span');info.textContent='학번 '+(student.studentId||no)+' · 등록 교과목 '+courses.length+'건';meta.append(info);
+  const area=document.getElementById('course-grid');area.replaceChildren();
+  courses.forEach(r=>{const card=document.createElement('article');card.className='course';const bar=document.createElement('div');bar.className='coursebar';
+  const hint=document.createElement('small');hint.textContent='AI BOOTCAMP';
+  const badge=document.createElement('span');badge.className='badge '+(r.status==='이수완료'?'done':r.status==='미이수'?'failed':'pending');badge.textContent=r.status||'확인중';bar.append(hint,badge);
+  const title=document.createElement('h3');title.textContent=r.course||'교과목 미등록';const dl=document.createElement('dl');
+  [['이수시간',r.hours?String(r.hours)+'시간':'확인중'],['교육기간',r.period||'확인중']].forEach(pair=>{const dt=document.createElement('dt');dt.textContent=pair[0];const dd=document.createElement('dd');dd.textContent=pair[1];dl.append(dt,dd)});card.append(bar,title,dl);area.append(card)});
+  section.classList.add('active');show('인증된 이수내역 '+courses.length+'건을 조회했습니다.','ok');section.scrollIntoView({behavior:'smooth',block:'start'});
+ }catch(err){show(err.message||'서버에 연결할 수 없습니다.','error')}
+ finally{submit.disabled=!credential;submit.textContent='내 이수내역 조회';}
 });
-function show(s,k){msg.textContent=s;msg.className='message '+k}
 document.getElementById('reset').addEventListener('click',()=>{form.reset();section.classList.remove('active');msg.className='message';document.getElementById('no').focus();window.scrollTo({top:0,behavior:'smooth'})});
 })();
 </script>
