@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173a65">
+<meta name="description" content="광주대학교 AI부트캠프사업단 몰입형 교과목 이수내역 조회">
+<title>몰입형 교과목 이수내역 조회 | 광주대학교 AI부트캠프</title>
+<style>
+:root{--navy:#142d51;--blue:#245db6;--ink:#20334e;--muted:#65788e;--border:#e2eaf2;--bg:#f5f8fc;--green:#157a56;--orange:#946216}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;word-break:keep-all}
+button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:inherit;text-decoration:none}
+.topline{height:5px;background:linear-gradient(90deg,#245cba,#2da6a8,#99d7c1)}header{background:white;border-bottom:1px solid var(--border)}.header{max-width:1090px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:16px}.symbol{display:grid;place-items:center;background:var(--navy);color:white;border-radius:12px;width:43px;height:43px;font-weight:900}.brand small{display:block;color:var(--muted);font-weight:500;font-size:11px;letter-spacing:.5px}.back{font-size:12px;font-weight:700;color:var(--blue)}
+main{max-width:1090px;margin:0 auto;padding:26px 22px 56px}.hero{padding:43px 42px;background:linear-gradient(115deg,#163963,#102a4e 70%,#204c7e);color:white;border-radius:20px;position:relative;overflow:hidden}.hero:before{content:"";width:300px;height:300px;border-radius:50%;border:1px solid #ffffff20;position:absolute;right:-60px;top:-150px;box-shadow:0 0 0 50px #ffffff06,0 0 0 100px #ffffff06}.eyebrow{color:#b8d9fa;font-size:11px;font-weight:800;letter-spacing:2px}.hero h1{font-size:32px;line-height:1.35;letter-spacing:-1px;margin:12px 0}.hero p{font-size:13px;color:#d7e2ef;margin:0}
+.statusbanner{margin:18px 0;padding:12px 16px;border-radius:11px;background:#fff9e9;border:1px solid #eeddb1;color:#7e591e;font-size:12px}.statusbanner strong{font-weight:900}
+.columns{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,1fr);gap:18px;margin-top:18px;align-items:start}.panel{background:white;border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:0 13px 32px rgba(14,47,85,.04)}h2{margin:0 0 4px;font-size:20px;letter-spacing:-.7px}.sub{font-size:13px;color:var(--muted);margin:0 0 24px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}.field input{height:49px;width:100%;border:1px solid #c7d5e5;border-radius:10px;padding:0 13px;outline:0;background:white}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e7efff}
+.submit{width:100%;border:0;border-radius:11px;margin-top:19px;background:var(--blue);color:white;min-height:50px;font-size:14px;font-weight:900}.submit:hover{background:#184787}.micro{color:#76879c;font-size:11px;margin-top:13px}.micro strong{color:#385b85}.message{display:none;border-radius:10px;margin-top:15px;padding:11px 13px;font-size:12px}.message.error{display:block;background:#fff0f0;color:#9a3541;border:1px solid #f1cfd0}.message.ok{display:block;background:#effaf4;color:#13704e;border:1px solid #c4e6d3}.steps{list-style:none;padding:0;margin:16px 0 0}.steps li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}.steps li:last-child{border:0}.num{display:grid;place-items:center;border-radius:50%;width:27px;height:27px;flex:0 0 27px;background:#eaf2ff;color:var(--blue);font-weight:800;font-size:12px}.steptext strong{font-size:13px}.steptext p{margin:2px 0 0;color:var(--muted);font-size:12px}.smallnote{padding:14px;background:#f5f8fc;border-radius:10px;color:#6a7e96;font-size:11px;margin-top:14px}
+.results{display:none;margin-top:25px}.results.active{display:block}.rhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.reset{border:1px solid #d4e0ed;background:white;color:var(--blue);border-radius:9px;font-weight:800;padding:8px 12px;font-size:12px}.identity{background:#eaf2ff;border-radius:12px;padding:14px 18px;font-size:13px;display:flex;gap:24px;flex-wrap:wrap;align-items:center}.identity strong{font-size:16px}.identity span{color:#516b89}.course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}.course{background:white;border:1px solid var(--border);border-radius:15px;padding:21px;min-height:170px}.coursebar{display:flex;align-items:center;justify-content:space-between;gap:12px}.coursebar small{font-size:10px;color:#6c86a7;font-weight:800;letter-spacing:1px}.badge{font-weight:900;border-radius:99px;padding:5px 10px;font-size:11px;white-space:nowrap}.badge.done{background:#e6f7ee;color:#167552}.badge.pending{background:#fff3d9;color:#88600d}.badge.failed{background:#eaf0f5;color:#62768b}.course h3{font-size:18px;letter-spacing:-.5px;margin:12px 0 16px;line-height:1.4}dl{display:grid;grid-template-columns:65px auto;gap:6px 12px;margin:0;font-size:12px}dt{color:#8191a5}dd{margin:0;color:#4f6582;font-weight:700}.footer-notice{margin-top:18px;font-size:12px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 17px;color:#61758c}footer{text-align:center;font-size:11px;color:#8292a6;padding:20px;border-top:1px solid var(--border)}
+@media(max-width:760px){.header{padding:14px}.brand{font-size:13px}.brand small{font-size:9px}.back{font-size:11px}main{padding:15px 13px 35px}.hero{padding:29px 23px}.hero h1{font-size:25px}.columns{grid-template-columns:1fr}.formrow,.course-grid{grid-template-columns:1fr}.panel{padding:22px}.rhead h2{font-size:18px}.identity{gap:7px}}
+@media print{header,.hero,.columns,.statusbanner,.rhead button,.footer-notice,footer{display:none!important}.results{display:block!important}.course-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header><div class="header"><div class="brand"><div class="symbol" aria-hidden="true">GU</div><div>광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></div></div><a class="back" href="../">사업단 홈페이지</a></div></header>
+<main>
+<section class="hero"><div class="eyebrow">COURSE COMPLETION LOOKUP</div><h1>몰입형 교과목<br>이수내역 조회</h1><p>사업단에 등록된 교과목별 이수상태를 조회하는 학생 전용 화면입니다.</p></section>
+<div class="statusbanner" role="note"><strong>현재 시연용 페이지입니다.</strong> 실제 학생 명단은 연결되지 않았습니다. 테스트 정보로만 조회할 수 있으며, 공식 이수확인 자료로 사용할 수 없습니다.</div>
+<div class="columns">
+<section class="panel" aria-labelledby="lookup-heading"><h2 id="lookup-heading">학생 이수내역 확인</h2><p class="sub">본인의 학번과 학생명을 입력한 후 조회해 주세요.</p>
+<form id="lookup" autocomplete="off">
+<div class="formrow">
+<div class="field"><label for="no">학번</label><input id="no" name="no" required inputmode="numeric" pattern="[0-9]{6,12}" maxlength="12" placeholder="학번 입력(숫자)" autocomplete="off"></div>
+<div class="field"><label for="name">학생명</label><input id="name" name="name" required maxlength="30" placeholder="학생명 입력" autocomplete="off"></div>
+</div><button class="submit" type="submit" id="submit">내 이수내역 조회</button>
+</form><p class="micro">시연용 테스트 정보: <strong>99990001 / 홍길동</strong> 또는 <strong>99990002 / 김가상</strong></p><div class="message" id="message" role="status" aria-live="polite"></div></section>
+<aside class="panel"><h2>조회 안내</h2><ol class="steps"><li><span class="num">1</span><div class="steptext"><strong>학번·학생명 입력</strong><p>본인의 등록 정보를 정확히 입력합니다.</p></div></li><li><span class="num">2</span><div class="steptext"><strong>교과목별 이수내역 확인</strong><p>조회된 교과목명, 이수상태 및 교육정보를 확인합니다.</p></div></li><li><span class="num">3</span><div class="steptext"><strong>오류·누락 시 사업단 문의</strong><p>등록정보와 실제 수강내역이 다른 경우 담당자에게 문의합니다.</p></div></li></ol><div class="smallnote">학생 조회 전용 화면으로, 관리자의 명단 업로드 기능과 전체 학생명단은 공개하지 않습니다. 정식 운영 전 대학 통합로그인 등 본인인증 연동이 필요합니다.</div></aside>
+</div>
+<section class="results" id="results" aria-live="polite"><div class="rhead"><h2>조회 결과 <small style="font-size:12px;color:#8a6b2d">시연 데이터</small></h2><button class="reset" id="reset" type="button">다른 학번 조회</button></div><div class="identity" id="identity"></div><div class="course-grid" id="course-grid"></div></section>
+<div class="footer-notice">본 페이지는 광주대학교 AI부트캠프 몰입형 교과목 이수내역 조회 시스템의 시안입니다. 실제 운영을 위해 사업단 관리 명단 및 인증된 조회 API 연결이 필요합니다.</div>
+</main><footer>광주대학교 AI부트캠프사업단 · 몰입형 교과목 이수내역 확인</footer>
+<script>
+(function(){
+'use strict';
+const records=[
+{no:'99990001',name:'홍길동',course:'멀티클라우드 운영',status:'이수완료',hours:'15',period:'2026. 11. 01. ~ 11. 05.'},
+{no:'99990001',name:'홍길동',course:'Cloud Native 아키텍처',status:'확인중',hours:'15',period:'2026. 11. 18. ~ 11. 20.'},
+{no:'99990002',name:'김가상',course:'MLOps',status:'이수완료',hours:'15',period:'2026. 11. 16. ~ 11. 30.'}
+];
+const form=document.getElementById('lookup'),msg=document.getElementById('message'),section=document.getElementById('results');
+form.addEventListener('submit',function(e){e.preventDefault();msg.textContent='';msg.className='message';section.classList.remove('active');
+const no=document.getElementById('no').value.trim(),name=document.getElementById('name').value.trim().replace(/\s+/g,'');
+if(!/^\d{6,12}$/.test(no)||!name){show('학번과 학생명을 정확히 입력해 주세요.','error');return}
+const found=records.filter(r=>r.no===no&&r.name.replace(/\s+/g,'')===name);
+if(!found.length){show('입력한 학번과 이름에 해당하는 시연 자료가 없습니다.','error');return}
+const meta=document.getElementById('identity');meta.replaceChildren();
+const bold=document.createElement('strong');bold.textContent=name[0]+'*'.repeat(Math.max(1,name.length-1))+' 학생';meta.append(bold);
+const info=document.createElement('span');info.textContent='학번 '+no+' · 등록 교과목 '+found.length+'건';meta.append(info);
+const area=document.getElementById('course-grid');area.replaceChildren();
+found.forEach(r=>{const card=document.createElement('article');card.className='course';const bar=document.createElement('div');bar.className='coursebar';const hint=document.createElement('small');hint.textContent='AI BOOTCAMP';const badge=document.createElement('span');badge.className='badge '+(r.status==='이수완료'?'done':r.status==='미이수'?'failed':'pending');badge.textContent=r.status;bar.append(hint,badge);
+const title=document.createElement('h3');title.textContent=r.course;const dl=document.createElement('dl');[['이수시간',r.hours+'시간'],['교육기간',r.period]].forEach(pair=>{const dt=document.createElement('dt');dt.textContent=pair[0];const dd=document.createElement('dd');dd.textContent=pair[1];dl.append(dt,dd)});card.append(bar,title,dl);area.append(card)});
+section.classList.add('active');show('시연 이수내역 '+found.length+'건이 조회되었습니다.','ok');section.scrollIntoView({behavior:'smooth',block:'start'});
+});
+function show(s,k){msg.textContent=s;msg.className='message '+k}
+document.getElementById('reset').addEventListener('click',()=>{form.reset();section.classList.remove('active');msg.className='message';document.getElementById('no').focus();window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body></html>
