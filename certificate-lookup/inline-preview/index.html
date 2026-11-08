@@ -106,13 +106,20 @@ main{max-width:1090px;margin:0 auto;padding:26px 22px 56px}.hero{padding:43px 42
     msg.style.display='block';
   }
   function clearResults(){result.hidden=true;identity.replaceChildren();grid.replaceChildren();}
+  function maskName(name){
+    const chars=Array.from(String(name || '').trim());
+    if(chars.length===0)return '학생';
+    if(chars.length===1)return chars[0];
+    if(chars.length===2)return chars[0]+'*';
+    return chars[0]+'*'.repeat(chars.length-2)+chars[chars.length-1];
+  }
   function render(data){
     const student=data.student||{};
     const courses=Array.isArray(data.courses)?data.courses:[];
     if(!courses.length)throw new Error('조회할 이수내역이 없습니다.');
     identity.replaceChildren();
     identity.append(
-      node('strong',student.name||'학생'),
+      node('strong',maskName(student.name||student.displayName||'')),
       node('span','학번 '+(student.studentId||'')),
       node('span','학과 '+(student.department||'미등록')),
       node('span','이수 교과목 '+courses.length+'건')
