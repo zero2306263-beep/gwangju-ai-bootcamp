@@ -41,10 +41,19 @@ main{max-width:1090px;margin:0 auto;padding:26px 22px 56px}.hero{padding:43px 42
 .inline-results .badge.failed{background:#edf2f8;color:#5c6c7e}
 @media(max-width:760px){.inline-results .course-grid{grid-template-columns:1fr}.inline-results .identity{display:block}.inline-results .identity span{display:block;margin-top:5px}}
 </style>
+<style id="gu-unified-brand-style">
+.gu-site-brand{display:inline-flex;align-items:center;justify-content:flex-start;flex-shrink:0;min-width:0;line-height:1;text-decoration:none}
+.gu-site-brand img{width:clamp(220px,24vw,316px);height:auto;max-width:100%;display:block;object-fit:contain}
+.gu-site-brand--on-dark{background:#fff;border-radius:10px;padding:3px 8px}
+.gu-site-brand:hover{opacity:.88}
+.gu-site-brand:focus-visible{outline:3px solid #54d8b5;outline-offset:4px}
+@media(max-width:600px){.gu-site-brand img{width:min(286px,calc(100vw - 50px))}}
+.header{flex-wrap:wrap}
+</style>
 </head>
 <body>
 <div class="topline"></div>
-<header><div class="header"><div class="brand"><div class="symbol" aria-hidden="true">GU</div><div>광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></div></div><a class="back" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">장학금 홈페이지</a></div></header>
+<header><div class="header"><a class="gu-site-brand" href="../../portal/" aria-label="광주대학교 AI부트캠프사업단 통합 메인페이지로 이동" title="사업단 메인페이지로 이동"><img src="../../assets/gu-ai-bootcamp-logo.svg" alt="GU 광주대학교 AI부트캠프사업단" width="540" height="98" loading="eager" decoding="async"></a><a class="back" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">장학금 홈페이지</a></div></header>
 <main>
   <section class="hero"><div class="eyebrow">COURSE COMPLETION LOOKUP</div><h1>몰입형 교과목<br>이수내역 조회</h1><p>사업단에서 등록한 교과목별 이수내역을 학생이 확인하는 페이지입니다.</p></section>
   <div class="statusbanner" id="integration-status" role="status"><strong>한 화면 조회 방식</strong> 학생 이수내역이 아래에 바로 표시됩니다. 관리용 Google Sheets는 비공개로 유지됩니다.</div>
