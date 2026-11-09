@@ -3,217 +3,361 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#102d54">
-<meta name="description" content="광주대학교 AI부트캠프 통합 안내 | 학과별 교육과정·이수현황·장학금 홈페이지 바로가기">
-<meta property="og:title" content="광주대학교 AI부트캠프 통합 홈페이지">
-<meta property="og:description" content="교육과정부터 몰입형 이수내역과 인증 장학금까지 한곳에서 확인하세요.">
-<title>광주대학교 AI부트캠프 | 통합 홈페이지</title>
+<meta name="theme-color" content="#092445">
+<meta name="description" content="광주대학교 첨단산업 인재양성 AI부트캠프사업단. AI·SW, 제조, ERP, 건축, 디자인 융합 교육과 산학협력 프로젝트, 이수·장학금 안내.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="광주대학교 AI부트캠프사업단 | 전공과 AI를 연결하다">
+<meta property="og:description" content="산업 현장에서 배우고, 프로젝트로 완성하는 AI 융합 실무교육. 교육과정·장학금·몰입형 이수내역 한눈에 확인.">
+<title>광주대학교 AI부트캠프사업단 | 통합 메인홈페이지</title>
 <style>
-:root{color-scheme:light;--navy:#122d53;--navy2:#183f70;--ink:#1a2c46;--slate:#63738b;--line:#e2e8f1;--bg:#f5f7fb;--mint:#b8f4dc;--mint-dark:#0f7a64;--card:#fff}
+:root{--navy:#102d51;--mid:#1a4d7e;--ink:#173252;--muted:#5c718a;--line:#e2e9f1;--bg:#f6f8fb;--white:#fff;--mint:#b1f2d9;--green:#087e65;--softmint:#e7f8f0;--orange:#ffba79;--shadow:0 20px 55px rgba(20,53,87,.065)}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:82px}
-body{margin:0;font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.64;word-break:keep-all;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-a:focus-visible{outline:3px solid #67cab5;outline-offset:3px}
-.wrap{max-width:1180px;margin:0 auto;padding-left:24px;padding-right:24px}
-.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:850;color:var(--mint-dark)}
-header{position:sticky;top:0;z-index:40;background:#fffffff1;border-bottom:1px solid #e4e9f0;backdrop-filter:blur(15px)}
-header .bar{height:75px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:900;letter-spacing:-.04em;line-height:1.3}
-.symbol{display:grid;place-items:center;flex-shrink:0;background:var(--navy);color:#fff;border-radius:11px;width:45px;height:45px;font-family:Georgia,serif;font-size:19px;letter-spacing:-1px}
-.brand small{display:block;font-size:10px;letter-spacing:.06em;font-weight:600;color:#7990a9;margin-top:4px}
-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-nav a{font-weight:750;color:#526781;font-size:12px;padding:9px 12px;border-radius:9px;white-space:nowrap}
-nav a:hover{background:#eaf2f9;color:var(--navy)}
-nav .nav-cta{background:var(--navy);color:#fff}
-nav .nav-cta:hover{background:#244d7c;color:#fff}
-.hero{background:linear-gradient(126deg,#10294b 0%,#153760 58%,#21517a 100%);color:#fff;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;width:600px;height:600px;right:-130px;top:-290px;border:1px solid #ffffff25;border-radius:50%;box-shadow:0 0 0 85px #ffffff06,0 0 0 185px #ffffff07}
-.hero:after{content:"";position:absolute;bottom:-140px;left:36%;width:360px;height:360px;background:radial-gradient(circle,#70e1bd25 0%,transparent 70%);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(330px,.75fr);gap:55px;align-items:center;min-height:490px;padding-top:65px;padding-bottom:65px}
-.hero .eyebrow{color:#a3efd4}
-.hero h1{font-size:clamp(32px,4.2vw,48px);line-height:1.37;letter-spacing:-.065em;margin:17px 0 20px;font-weight:900}
-.hero h1 em{font-style:normal;color:var(--mint)}
-.hero p{color:#d1def0;max-width:580px;font-size:15px;margin:0}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:11px;padding:13px 21px;font-size:13px;font-weight:850;min-height:47px;transition:transform .15s ease,background .15s ease;border:1px solid transparent}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;line-height:1.68;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #5cc9a9;outline-offset:4px}
+button{font:inherit}
+.wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
+.skip{position:absolute;top:-150px;left:10px;z-index:300;background:#fff;color:#0b3555;padding:13px;border-radius:8px}
+.skip:focus{top:10px}
+header{height:79px;position:sticky;top:0;z-index:80;background:rgba(255,255,255,.96);border-bottom:1px solid #e5ebf1;backdrop-filter:blur(14px)}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:100%}
+.brand{display:flex;align-items:center;gap:12px;line-height:1.26;min-width:0}
+.brand-emblem{display:grid;place-items:center;width:45px;height:45px;border-radius:12px;color:white;background:var(--navy);font-weight:900;font-size:17px;font-family:Georgia,serif;flex-shrink:0}
+.brand-name{font-weight:900;font-size:15px;letter-spacing:-.04em}
+.brand-name small{display:block;color:#6d8098;font-size:9px;letter-spacing:.1em;font-weight:700;margin-top:5px}
+.header-links{display:flex;gap:2px;align-items:center;justify-content:flex-end}
+.header-links>a{font-size:12px;font-weight:800;padding:9px 11px;color:#445c78;white-space:nowrap;border-radius:8px}
+.header-links>a:hover{background:#f0f5fa}
+.header-links>a.nav-apply{color:#fff;background:var(--navy);padding:10px 15px;margin-left:7px}
+.header-links>a.nav-apply:hover{background:#205080}
+.hero{color:white;background:radial-gradient(ellipse 440px 370px at 93% 35%,rgba(51,137,178,.27),transparent 88%),linear-gradient(120deg,#0b2443 0%,#14375f 63%,#1d5479 100%);position:relative;isolation:isolate;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-180px;top:-280px;width:720px;height:720px;border:1px solid #8ac4df31;border-radius:50%;box-shadow:0 0 0 80px #9bd3e805,0 0 0 180px #9bd3e809;z-index:-1}
+.hero-inner{min-height:570px;padding-top:84px;padding-bottom:77px;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(350px,.82fr);gap:48px;align-items:center}
+.hero-kicker{font-weight:900;font-size:11px;letter-spacing:.17em;color:#b4f1d7;display:flex;align-items:center;gap:10px}
+.hero-kicker:before{content:"";width:26px;height:2px;background:#a8edd5;display:block}
+.hero h1{margin:22px 0 17px;font-size:clamp(37px,4.2vw,53px);font-weight:900;line-height:1.34;letter-spacing:-.065em}
+.hero h1 em{color:var(--mint);font-style:normal}
+.hero-desc{font-size:14px;line-height:1.86;color:#cbd9e9;max-width:580px;margin:0}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:31px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:13px 20px;min-height:49px;font-size:13px;font-weight:900;border-radius:10px;transition:transform .15s ease,background .15s ease;border:1px solid transparent}
 .btn:hover{transform:translateY(-2px)}
-.btn-mint{background:var(--mint);color:#12374c}
-.btn-outline{color:#fff;border-color:#7797b5;background:#ffffff0a}
-.btn-outline:hover{background:#ffffff15}
+.btn-mint{background:var(--mint);color:#12394b}
+.btn-mint:hover{background:#d1fbe9}
+.btn-ghost{background:#ffffff0e;color:#fff;border-color:#88afc46e}
+.btn-ghost:hover{background:#ffffff20}
 .btn-navy{background:var(--navy);color:#fff}
-.btn-white{background:#fff;color:var(--navy);border-color:#cedaeb}
-.hero-panel{border:1px solid #acc7de45;border-radius:21px;background:#ffffff12;backdrop-filter:blur(7px);padding:25px;box-shadow:0 20px 70px #09223d33}
-.panel-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:10px}
-.panel-top h2{font-size:18px;margin:0;letter-spacing:-.03em}
-.panel-top small{font-size:11px;color:#b4cce2}
-.quick-link{display:flex;gap:14px;align-items:center;padding:15px 4px;border-top:1px solid #bfd1e329}
-.quick-link .num{display:grid;place-items:center;flex-shrink:0;width:33px;height:33px;border-radius:10px;background:#ffffff1b;color:var(--mint);font-size:12px;font-weight:900}
-.quick-link strong{display:block;font-size:13px;letter-spacing:-.02em}
-.quick-link small{display:block;color:#b6cbe0;font-size:11px;margin-top:1px}
-.quick-link .arr{margin-left:auto;color:var(--mint);font-size:20px}
-.quick-link:hover strong{text-decoration:underline;text-underline-offset:4px}
-.section{padding-top:67px;padding-bottom:12px}
-.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:22px}
-.section-heading h2{font-size:27px;margin:6px 0 3px;letter-spacing:-.052em;line-height:1.35}
-.section-heading p{color:var(--slate);font-size:13px;margin:0}
-.section-heading a{color:#235f95;font-size:12px;font-weight:800;white-space:nowrap}
-.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.service{position:relative;min-width:0;display:flex;flex-direction:column;gap:13px;padding:28px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:0 12px 35px #162f4608;transition:border .15s ease,transform .15s ease}
-.service:hover,.course:hover{transform:translateY(-3px);border-color:#a4c8ca}
-.service .iconbox{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#edf3fb;color:#204c83}
-.service .iconbox.mint{background:#e7f9f2;color:var(--mint-dark)}
-.service .iconbox.lavender{background:#efefff;color:#5b61a3}
-.service svg{width:24px;height:24px;stroke-width:1.7;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
-.service h3{font-size:20px;letter-spacing:-.043em;margin:0}
-.service p{font-size:13px;color:#6a7f97;margin:0;min-height:67px}
-.service .service-go{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid #eaf0f5;font-weight:850;font-size:12px;color:#1f6182;margin-top:auto}
-.programs{display:grid;grid-template-columns:1fr 1fr;gap:17px}
-.program{padding:26px 28px;border:1px solid var(--line);border-radius:18px;background:#fff;display:flex;flex-direction:column;gap:18px;min-width:0}
-.program.featured{background:#ecf2f9}
-.program-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
-.tag{display:inline-block;font-weight:900;font-size:10px;letter-spacing:.06em;border-radius:30px;background:#eaf0f8;color:#2f6696;padding:5px 10px;margin-bottom:9px}
-.program.featured .tag{background:#dceafa}
-.program h3{margin:0;font-size:21px;letter-spacing:-.04em}
-.program p{color:#687d94;margin:5px 0 0;font-size:12px}
-.program .code-mark{font-family:ui-monospace,Menlo,monospace;font-size:23px;color:#c1d2e6}
-.course-links{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.course{display:flex;justify-content:space-between;align-items:center;min-width:0;border:1px solid #dce6f0;border-radius:10px;background:#fff;padding:13px 14px;font-size:12px;font-weight:850;transition:transform .15s ease,border .15s ease}
-.course .arrow{color:#438caf;flex-shrink:0}
-.program .full{grid-column:1/-1}
-.program .single{margin-top:auto}
-.strip{margin-top:44px;padding:31px 34px;background:#dff5ef;border:1px solid #bfebd9;border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.strip strong{display:block;font-size:21px;letter-spacing:-.04em}
-.strip p{font-size:12px;color:#3c7770;margin:4px 0 0}
-.strip .btn{flex-shrink:0}
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.step{background:#fff;padding:24px;border:1px solid var(--line);border-radius:16px;min-width:0}
-.step .step-no{display:grid;place-items:center;font-size:12px;font-weight:900;color:#0e826d;background:#e5f8f1;width:33px;height:33px;border-radius:100%;margin-bottom:14px}
-.step h3{margin:0 0 8px;font-size:16px;letter-spacing:-.03em}
-.step p{font-size:12px;margin:0;color:#72859b}
-.step .step-link{display:inline-flex;margin-top:17px;color:#206097;font-size:12px;font-weight:900}
-.notice{border-radius:16px;background:#fff;padding:22px 26px;border:1px solid var(--line);margin-top:15px}
-.notice h3{font-size:15px;margin:0 0 6px}
-.notice p{font-size:12px;color:#6c7f95;margin:0}
-.departments{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
-.departments span{border:1px solid #d9e3ee;padding:7px 12px;border-radius:50px;background:#fff;font-size:11px;color:#597187;font-weight:800}
-footer{border-top:1px solid #e1e8ef;margin-top:70px;background:#fff}
-.foot{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:22px;padding-bottom:22px}
-.foot strong{font-size:12px}
-.foot small{display:block;font-size:11px;color:#8495a9;margin-top:3px}
-.foot a{font-size:11px;color:#235c99;font-weight:850}
-@media(max-width:950px){.hero-grid{grid-template-columns:1fr;gap:28px}.hero-panel{max-width:620px}.service-grid{grid-template-columns:1fr 1fr}.service-grid .service:last-child{grid-column:1/-1}.programs{grid-template-columns:1fr}}
-@media(max-width:680px){header .bar{height:auto;min-height:72px;align-items:flex-start;flex-direction:column;padding-top:13px;padding-bottom:12px;gap:12px}nav{gap:4px}nav a{padding:7px 9px;font-size:11px}.wrap{padding-left:16px;padding-right:16px}.hero-grid{padding-top:48px;padding-bottom:46px;min-height:0}.hero h1{font-size:32px}.hero p{font-size:13px}.hero-panel{padding:18px}.section{padding-top:47px}.section-heading h2{font-size:23px}.service-grid{grid-template-columns:1fr}.service-grid .service:last-child{grid-column:auto}.service{padding:23px}.service p{min-height:0}.program{padding:22px}.course-links{grid-template-columns:1fr}.strip{align-items:flex-start;flex-direction:column;padding:24px}.strip strong{font-size:19px}.strip .btn{width:100%}.steps{grid-template-columns:1fr}.foot{align-items:flex-start;flex-direction:column}html{scroll-padding-top:148px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.service,.course{transition:none}}
+.btn-light{border-color:#c6d7e8;color:#173a66;background:#fff}
+.hero-mini{font-size:11px;color:#8fabca;margin-top:23px}
+.hero-visual{position:relative;height:375px;display:grid;place-items:center}
+.glow{position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(115,225,191,.11),transparent 69%);pointer-events:none}
+.orbit{width:320px;height:320px;border:1px solid #a5d5e548;border-radius:50%;position:relative;display:grid;place-items:center}
+.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px dashed #d5f9e14d;width:245px;height:245px}
+.orbit:after{width:384px;height:384px;border-style:solid;border-color:#e3fcff12}
+.core{width:164px;height:164px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(150deg,#a4f1da,#e1fffb);border:10px solid #ffffff13;border-radius:50%;box-shadow:0 0 0 14px #ffffff0a,0 25px 60px #091f3669;color:#10334c;z-index:1}
+.core span{font-family:Georgia,serif;font-size:50px;letter-spacing:-.08em;font-weight:900;line-height:1}
+.core small{font-weight:900;font-size:9px;letter-spacing:.19em;margin-top:8px}
+.orbit-item{position:absolute;z-index:2;background:#ffffffed;color:#163b61;padding:9px 13px;border-radius:100px;font-size:11px;font-weight:900;box-shadow:0 14px 40px #041a2b49;border:1px solid #d8eaf2;white-space:nowrap}
+.orbit-item.i1{top:3px;left:75px}
+.orbit-item.i2{top:75px;right:-39px}
+.orbit-item.i3{bottom:42px;right:-40px}
+.orbit-item.i4{bottom:-9px;left:59px}
+.orbit-item.i5{top:131px;left:-49px}
+.metrics{background:#fff;border-bottom:1px solid var(--line)}
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:29px;padding-bottom:29px}
+.metric{padding-left:30px;border-left:1px solid var(--line)}
+.metric:first-child{padding-left:0;border:0}
+.metric b{font-size:27px;letter-spacing:-.065em;line-height:1.2;color:var(--navy);display:block}
+.metric b span{font-size:15px;font-weight:850;margin-left:4px}
+.metric small{display:block;font-size:11px;font-weight:750;color:#7286a0;margin-top:7px}
+section.content{padding:88px 0 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:27px}
+.kicker{font-size:11px;font-weight:900;color:#0b8a6e;letter-spacing:.15em}
+.section-head h2,.section-intro h2{font-size:clamp(24px,3.2vw,32px);letter-spacing:-.055em;line-height:1.35;margin:9px 0 9px;color:#102d51}
+.section-head p,.section-intro p{font-size:13px;color:#688096;margin:0;line-height:1.85}
+.section-head>a{color:#1b5d88;font-weight:850;white-space:nowrap;font-size:12px}
+.shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.shortcut{padding:25px 20px 20px;background:#fff;border:1px solid var(--line);border-radius:17px;display:flex;flex-direction:column;min-height:226px;box-shadow:var(--shadow);transition:transform .15s ease,border-color .15s ease}
+.shortcut:hover,.track:hover,.news:hover{transform:translateY(-3px);border-color:#b8ccdc}
+.shortcut .mark{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:#edf4fb;color:#275b88;font-size:21px;margin-bottom:20px}
+.shortcut:nth-child(2) .mark{background:#e8f8f1;color:#147e66}
+.shortcut:nth-child(3) .mark{background:#f0efff;color:#6860a4}
+.shortcut:nth-child(4) .mark{background:#fff1e6;color:#bc7040}
+.shortcut h3{font-size:17px;margin:0 0 7px;letter-spacing:-.04em}
+.shortcut p{font-size:12px;color:#72879c;margin:0 0 16px;line-height:1.65}
+.shortcut .go{font-size:12px;color:#1b6289;font-weight:900;margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eef1f5;padding-top:13px}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:stretch}
+.about-copy{background:#fff;border:1px solid var(--line);border-radius:19px;padding:35px 38px}
+.about-copy h3{font-size:24px;letter-spacing:-.045em;line-height:1.55;margin:12px 0}
+.about-copy p{font-size:13px;color:#667c92;margin:0;line-height:1.95}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}
+.about-tags span{padding:7px 12px;border-radius:50px;background:#f0f5fa;color:#365878;font-size:11px;font-weight:800}
+.about-plan{border-radius:19px;padding:30px 31px;color:#fff;background:linear-gradient(140deg,#15375b,#275b7d);display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+.about-plan small{font-size:11px;font-weight:900;letter-spacing:.12em;color:#a1eacb}
+.about-plan h3{font-size:26px;letter-spacing:-.04em;line-height:1.44;margin:15px 0}
+.about-plan p{font-size:12px;color:#c7dce9;line-height:1.82}
+.about-plan a{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:12px;color:#c3f4df;margin-top:22px}
+.track-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.track{border:1px solid var(--line);background:#fff;border-radius:18px;padding:27px 25px;min-height:270px;display:flex;flex-direction:column;transition:transform .15s ease,border-color .15s ease}
+.track .track-id{font-size:11px;font-weight:900;letter-spacing:.13em;color:#2870a1}
+.track h3{font-size:20px;letter-spacing:-.04em;line-height:1.4;margin:15px 0 8px}
+.track p{font-size:12px;color:#73879c;line-height:1.8;margin:0}
+.track .dept{margin-top:14px;color:#365877;font-size:11px;font-weight:800}
+.track .course-link{font-size:12px;font-weight:900;color:#116d64;margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:7px}
+.track .prepare{font-size:11px;color:#8495a6;margin-top:auto;padding-top:16px}
+.track-wide{grid-column:span 2;background:linear-gradient(110deg,#eaf2fa,#fff)}
+.track-bubble{display:inline-block;background:#e8f8ef;color:#098467;border-radius:50px;font-size:10px;font-weight:900;padding:6px 11px}
+.dpt-list{border-radius:15px;background:#ecf2f8;padding:24px 26px;margin-top:16px}
+.dpt-list strong{font-size:12px;display:block;margin-bottom:11px}
+.dpt-list div{display:flex;gap:8px;flex-wrap:wrap}
+.dpt-list span{background:#fff;border:1px solid #d9e5f1;border-radius:40px;padding:7px 13px;color:#526c87;font-size:11px;font-weight:850}
+.training{background:#fff;border:1px solid var(--line);border-radius:19px;padding:33px 35px}
+.training-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.training-step{position:relative;padding-right:16px}
+.training-step:not(:last-child):after{content:"→";position:absolute;right:-5px;top:7px;font-size:24px;color:#8db0c3}
+.step-index{width:40px;height:40px;border-radius:12px;background:#e5f6ee;color:#0a8167;display:grid;place-items:center;font-size:13px;font-weight:900;margin-bottom:14px}
+.training-step h3{font-size:16px;letter-spacing:-.035em;margin:0 0 7px}
+.training-step p{font-size:12px;color:#72869c;line-height:1.8;margin:0}
+.program-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.program{display:flex;gap:19px;align-items:flex-start;background:#fff;border:1px solid var(--line);padding:24px;border-radius:17px;min-height:178px;transition:border-color .2s}
+.program:hover{border-color:#a7ccdb}
+.prog-mark{flex:0 0 52px;height:52px;border-radius:14px;background:#eaf2fb;color:#245986;display:grid;place-items:center;font-size:21px;font-weight:900}
+.program:nth-child(2) .prog-mark{background:#ebf9ef;color:#118366}
+.program:nth-child(3) .prog-mark{background:#fff2e4;color:#b37936}
+.program:nth-child(4) .prog-mark{background:#f0efff;color:#7165b1}
+.program:nth-child(5) .prog-mark{background:#e9f4f5;color:#3f8693}
+.program h3{font-size:17px;letter-spacing:-.03em;margin:0 0 5px}
+.program p{font-size:12px;color:#71849a;line-height:1.8;margin:0 0 12px}
+.program a{display:inline-flex;gap:7px;align-items:center;color:#0e7890;font-size:12px;font-weight:900}
+.support{border-radius:21px;overflow:hidden;background:#102c4b;color:#fff;display:grid;grid-template-columns:1.15fr .85fr}
+.support .intro{padding:42px 42px 47px;background:radial-gradient(ellipse at bottom right,#275b7a,transparent 62%)}
+.support .intro small{font-size:11px;letter-spacing:.14em;font-weight:900;color:#92e0c6}
+.support .intro h2{font-size:27px;letter-spacing:-.05em;margin:12px 0 9px}
+.support .intro p{font-size:13px;line-height:1.85;color:#c8d8e7;margin:0 0 24px}
+.support .support-links{display:flex;flex-wrap:wrap;gap:9px}
+.support .steps{padding:38px 31px;display:flex;flex-direction:column;gap:18px;border-left:1px solid #ffffff21}
+.support .steps>div{display:flex;gap:14px;align-items:flex-start}
+.support .steps b{display:grid;place-items:center;background:#ffffff1b;border-radius:9px;flex-shrink:0;width:32px;height:32px;font-size:12px;color:#b7f2d9}
+.support .steps p{font-size:12px;color:#c3d8e7;margin:4px 0 0;line-height:1.6}
+.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.news{background:#fff;border:1px solid var(--line);border-radius:17px;padding:25px;display:flex;flex-direction:column;gap:12px;min-height:200px;transition:transform .15s ease,border-color .15s ease}
+.news small{color:#0e8770;font-size:11px;font-weight:900}
+.news h3{font-size:17px;line-height:1.56;letter-spacing:-.03em;margin:0}
+.news p{font-size:12px;color:#71889b;line-height:1.7;margin:0}
+.news .date{font-size:11px;color:#90a0b2;margin-top:auto}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{background:#fff;border:1px solid var(--line);padding:17px 21px;border-radius:13px}
+summary{list-style:none;font-size:13px;font-weight:850;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary:after{content:"+";font-size:23px;font-weight:400;color:#4d7894}
+details[open] summary:after{content:"−"}
+summary::-webkit-details-marker{display:none}
+details p{font-size:12px;color:#71879d;margin:12px 0 0;line-height:1.85}
+.contact{background:linear-gradient(110deg,#dff5ed,#f2faf7);border:1px solid #cae8da;border-radius:18px;margin-top:62px;padding:32px 36px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.contact small{color:#0d876d;font-weight:900;font-size:11px;letter-spacing:.13em}
+.contact h2{font-size:23px;letter-spacing:-.045em;margin:7px 0 6px}
+.contact p{font-size:12px;color:#47756f;margin:0}
+footer{margin-top:82px;border-top:1px solid var(--line);background:#fff}
+.footer-inner{padding-top:32px;padding-bottom:32px;display:flex;align-items:flex-start;justify-content:space-between;gap:25px}
+.footer-inner strong{font-size:13px}
+.footer-inner small{display:block;font-size:11px;color:#7f91a5;margin-top:8px;line-height:1.8}
+.footer-links{display:flex;gap:15px;flex-wrap:wrap}
+.footer-links a{font-size:12px;font-weight:800;color:#4b718e}
+@media(max-width:1000px){.header-links a{font-size:11px;padding:7px 6px}.hero-inner{grid-template-columns:1fr .9fr;gap:10px}.hero h1{font-size:40px}.orbit{transform:scale(.83)}.shortcuts{grid-template-columns:repeat(2,1fr)}.track-grid{grid-template-columns:repeat(2,1fr)}.track-wide{grid-column:auto}.news-grid{grid-template-columns:repeat(2,1fr)}.news-grid .news:last-child{grid-column:span 2}}
+@media(max-width:760px){header{height:auto}.navbar{padding:13px 0;flex-direction:column;align-items:flex-start;gap:10px}.header-links{width:100%;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}.header-links a{font-size:11px;padding:7px 8px}.header-links::-webkit-scrollbar{display:none}.wrap{width:min(100% - 30px,1160px)}html{scroll-padding-top:140px}.hero-inner{padding-top:51px;padding-bottom:50px;grid-template-columns:1fr;min-height:0}.hero h1{font-size:36px}.hero-visual{height:270px;margin-top:20px}.orbit{transform:scale(.68)}.metric-grid{grid-template-columns:repeat(2,1fr);gap:24px}.metric:nth-child(3){padding-left:0;border:0}.metric b{font-size:24px}section.content{padding-top:61px}.about-grid{grid-template-columns:1fr}.about-plan{min-height:250px}.training-steps{grid-template-columns:repeat(2,1fr);gap:25px}.training-step:nth-child(2):after{display:none}.program-list{grid-template-columns:1fr}.support{grid-template-columns:1fr}.support .steps{border-left:0;border-top:1px solid #ffffff21}.faq{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.footer-inner{flex-direction:column}}
+@media(max-width:540px){.brand-name{font-size:13px}.brand-emblem{width:39px;height:39px}.hero h1{font-size:31px}.hero-desc{font-size:13px}.hero-buttons{flex-direction:column}.hero-buttons .btn{width:100%}.hero-visual{display:none}.shortcuts,.track-grid,.news-grid{grid-template-columns:1fr}.news-grid .news:last-child{grid-column:auto}.shortcut{min-height:0}.about-copy{padding:27px}.about-plan{padding:27px}.training{padding:25px}.training-steps{grid-template-columns:1fr}.training-step:after{display:none!important}.dpt-list{padding:20px}.support .intro,.support .steps{padding:27px}.section-head{flex-direction:column;align-items:flex-start}.contact{padding:25px}.contact .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.shortcut,.track,.news{transition:none}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">본문 바로가기</a>
 <header>
-  <div class="bar wrap">
-    <a class="brand" href="./" aria-label="광주대학교 AI부트캠프 통합 홈페이지">
-      <span class="symbol" aria-hidden="true">GU</span>
-      <span>광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></span>
-    </a>
-    <nav aria-label="상단 바로가기">
-      <a href="#services">주요 서비스</a>
-      <a href="#programs">교육과정</a>
-      <a href="#guide">참여 안내</a>
-      <a class="nav-cta" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">이수·장학금 안내 ↗</a>
+  <div class="navbar wrap">
+    <a class="brand" href="#top" aria-label="광주대학교 AI부트캠프사업단 메인으로 이동"><span class="brand-emblem">GU</span><span class="brand-name">광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></span></a>
+    <nav class="header-links" aria-label="주 메뉴">
+      <a href="#about">사업단 소개</a><a href="#tracks">교육분야</a><a href="#programs">교육 프로그램</a><a href="#activities">사업단 소식</a><a href="#support">이수·장학금</a><a class="nav-apply" href="../certificate-lookup/">나의 이수내역 ↗</a>
     </nav>
   </div>
 </header>
-<main>
-  <section class="hero">
-    <div class="hero-grid wrap">
-      <div>
-        <div class="eyebrow">GWANGJU UNIVERSITY · AI BOOTCAMP</div>
-        <h1>배움부터 이수·장학금까지<br><em>한 곳에서 확인하세요.</em></h1>
-        <p>광주대학교 AI부트캠프사업단의 학과별 교육과정, 몰입형 교과목 이수내역, 인증 장학금 안내를 연결하는 통합 홈페이지입니다.</p>
-        <div class="hero-actions">
-          <a class="btn btn-mint" href="#services">서비스 바로가기 <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-outline" href="../">기존 교육과정 홈페이지 <span aria-hidden="true">→</span></a>
-        </div>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker">2026 첨단산업 인재양성 부트캠프</div>
+      <h1 id="hero-title">전공은 달라도,<br><em>AI로 연결됩니다.</em></h1>
+      <p class="hero-desc">컴퓨터공학에서 제조·ERP·건축·디자인까지.<br>대학과 산업체가 함께 만드는 현장 중심 AI 융합교육으로 실무 역량을 키우고, 프로젝트 경험을 취업 경쟁력으로 연결합니다.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-mint" href="#tracks">교육분야 살펴보기 <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-ghost" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">이수·장학금 안내 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hero-panel" aria-label="학생 빠른 이동">
-        <div class="panel-top"><h2>학생 빠른 이동</h2><small>QUICK ACCESS</small></div>
-        <a class="quick-link" href="../"><span class="num">01</span><span><strong>컴퓨터공학과 교육과정</strong><small>교과목·교육일정·신청 안내</small></span><span class="arr">↗</span></a>
-        <a class="quick-link" href="https://gu-mechanical-digitaltwin.zero2306263.chatgpt.site/"><span class="num">02</span><span><strong>기계·자동차공학 DigitalTwin</strong><small>전공 연계 실습·과정 확인</small></span><span class="arr">↗</span></a>
-        <a class="quick-link" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/"><span class="num">03</span><span><strong>교육 이수·인증 장학금</strong><small>학과별 이수조건·신청 안내</small></span><span class="arr">↗</span></a>
-        <a class="quick-link" href="../certificate-lookup/"><span class="num">04</span><span><strong>나의 몰입형 이수내역</strong><small>학번과 이름으로 이수현황 확인</small></span><span class="arr">↗</span></a>
+      <div class="hero-mini">교육부 첨단산업 인재양성 부트캠프 사업 · 광주대학교</div>
+    </div>
+    <div class="hero-visual" aria-label="AI와 소프트웨어, 제조, ERP, 건축, 디자인이 융합되는 교육 분야">
+      <div class="glow"></div>
+      <div class="orbit">
+        <div class="core"><span>AI</span><small>BOOTCAMP</small></div>
+        <span class="orbit-item i1">DATA · SW</span>
+        <span class="orbit-item i2">MANUFACTURING</span>
+        <span class="orbit-item i3">AI · ERP</span>
+        <span class="orbit-item i4">ARCHITECTURE</span>
+        <span class="orbit-item i5">DESIGN · CONTENT</span>
       </div>
-    </div>
-  </section>
-
-  <section class="section wrap" id="services">
-    <div class="section-heading">
-      <div><div class="eyebrow">STUDENT SERVICES</div><h2>필요한 서비스를 바로 찾으세요</h2><p>각 사이트의 기존 운영 주소를 유지하면서 필요한 메뉴를 한곳에 모았습니다.</p></div>
-    </div>
-    <div class="service-grid">
-      <a class="service" href="../">
-        <div class="iconbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-5 9 5-9 5-9-5ZM6 12v6c3.5 2.5 8.5 2.5 12 0v-6M21 9v8"/></svg></div>
-        <h3>교육과정 안내</h3><p>컴퓨터공학과 몰입형 교과목 소개, 일정과 상세 교육 홈페이지를 확인합니다.</p>
-        <div class="service-go"><span>교육과정 홈페이지</span><span>↗</span></div>
-      </a>
-      <a class="service" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">
-        <div class="iconbox mint"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></div>
-        <h3>이수·장학금 안내</h3><p>학과별 인정 교과목과 이수요건, 인증 장학금 신청 안내를 확인합니다.</p>
-        <div class="service-go"><span>장학금 홈페이지</span><span>↗</span></div>
-      </a>
-      <a class="service" href="../certificate-lookup/">
-        <div class="iconbox lavender"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h4"/></svg></div>
-        <h3>몰입형 이수내역 조회</h3><p>학번과 학생명으로 등록된 몰입형 교과목, 이수상태와 교육시간을 확인합니다.</p>
-        <div class="service-go"><span>학생 조회 홈페이지</span><span>↗</span></div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section wrap" id="programs">
-    <div class="section-heading">
-      <div><div class="eyebrow">EDUCATION PROGRAMS</div><h2>학과별 교육과정</h2><p>현재 운영 중인 개별 홈페이지로 연결됩니다. 최신 교육 일정은 각 상세 페이지를 확인하세요.</p></div>
-    </div>
-    <div class="programs">
-      <div class="program featured">
-        <div class="program-top"><div><span class="tag">AI · CLOUD · SOFTWARE</span><h3>컴퓨터공학과</h3><p>클라우드 인프라와 AI 실무 중심 몰입형 교육</p></div><div class="code-mark" aria-hidden="true">&lt;/&gt;</div></div>
-        <div class="course-links">
-          <a class="course" href="../cloud-native/"><span>Cloud Native 아키텍처</span><span class="arrow">↗</span></a>
-          <a class="course" href="../mlops/"><span>MLOps</span><span class="arrow">↗</span></a>
-          <a class="course" href="../multi-cloud.html"><span>멀티클라우드 운영</span><span class="arrow">↗</span></a>
-          <a class="course" href="../cloudnative-nca/"><span>Cloud Native NCA 과정</span><span class="arrow">↗</span></a>
-          <a class="course full" href="../"><span>컴퓨터공학과 전체 교육과정·일정</span><span class="arrow">↗</span></a>
-        </div>
-      </div>
-      <div class="program">
-        <div class="program-top"><div><span class="tag">AI · MANUFACTURING · SIMULATION</span><h3>기계·자동차공학 분야</h3><p>현장 제조공정 이해와 디지털트윈 실습 중심 교육</p></div><div class="code-mark" aria-hidden="true">3D</div></div>
-        <div class="course-links single">
-          <a class="course full" href="https://gu-mechanical-digitaltwin.zero2306263.chatgpt.site/"><span>DigitalTwin 기반 공정시뮬레이션</span><span class="arrow">↗</span></a>
-        </div>
-        <p>교육일정, 학습내용과 참여 안내는 해당 전용 홈페이지를 기준으로 확인하세요.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap">
-    <div class="strip">
-      <div><strong>인증 장학금 신청 전에 이수조건부터 확인하세요.</strong><p>학과별 인정 교과목과 몰입형 이수현황을 각각 확인한 뒤 신청 요건을 검토합니다.</p></div>
-      <a class="btn btn-navy" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/#tracks">내 학과 이수조건 확인 <span aria-hidden="true">↗</span></a>
     </div>
   </div>
+</section>
+<div class="metrics" aria-label="사업 주요 개요"><div class="wrap metric-grid">
+  <div class="metric"><b>2026<span>년</span></b><small>사업 선정 및 운영 시작</small></div>
+  <div class="metric"><b>5<span>년</span></b><small>중장기 산학연계 인재양성</small></div>
+  <div class="metric"><b>71.25<span>억 원</span></b><small>5년간 재정지원 규모(선정 발표 기준)</small></div>
+  <div class="metric"><b>AI<span>× 전공</span></b><small>분야별 맞춤 실무교육</small></div>
+</div></div>
 
-  <section class="section wrap" id="guide">
-    <div class="section-heading"><div><div class="eyebrow">HOW TO USE</div><h2>학생 이용 안내</h2><p>교육 참여부터 인증 준비까지 확인해야 할 순서입니다.</p></div></div>
+<section class="content wrap" id="quick">
+  <div class="section-head"><div><span class="kicker">QUICK SERVICE</span><h2>학생 바로가기</h2><p>자주 찾는 교육·이수·장학금 서비스를 바로 이용할 수 있습니다.</p></div></div>
+  <div class="shortcuts">
+    <a class="shortcut" href="#tracks"><div class="mark" aria-hidden="true">01</div><h3>교육트랙 안내</h3><p>전공에 맞는 AI 교육분야와 운영 교과목을 확인하세요.</p><span class="go">교육분야 살펴보기 <span aria-hidden="true">↗</span></span></a>
+    <a class="shortcut" href="../certificate-lookup/"><div class="mark" aria-hidden="true">02</div><h3>몰입형 이수확인</h3><p>학번과 성명을 입력해 등록된 몰입형 교과목 이수현황을 확인하세요.</p><span class="go">이수내역 조회하기 <span aria-hidden="true">↗</span></span></a>
+    <a class="shortcut" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/"><div class="mark" aria-hidden="true">03</div><h3>이수·인증 장학금</h3><p>학과별 인정 교과목, 인증요건과 신청서류를 확인하세요.</p><span class="go">장학금 홈페이지 <span aria-hidden="true">↗</span></span></a>
+    <a class="shortcut" href="#programs"><div class="mark" aria-hidden="true">04</div><h3>교육과정 바로가기</h3><p>Cloud Native, MLOps, DigitalTwin 등 세부 교육 홈페이지를 이용하세요.</p><span class="go">운영과정 확인하기 <span aria-hidden="true">↗</span></span></a>
+  </div>
+</section>
+
+<section class="content wrap" id="about">
+  <div class="section-head"><div><span class="kicker">ABOUT THE BOOTCAMP</span><h2>사업단 소개</h2><p>현장 수요를 교육과정으로 연결하고, 전공별 AI 융합 역량을 강화합니다.</p></div></div>
+  <div class="about-grid">
+    <div class="about-copy">
+      <span class="kicker">OUR MISSION</span>
+      <h3>산업 현장에서 필요한 AI 역량을<br>학생의 실전 경험으로.</h3>
+      <p>광주대학교 첨단산업 인재양성 부트캠프사업은 대학과 기업이 함께 교육과정을 개발·운영하여 실무형 AI 융합인재를 양성하는 사업입니다. 전공별 기초역량과 산업 응용기술을 결합하고, 몰입형 실습·산학 공동 프로젝트·현직자 멘토링을 통해 현업 문제해결 능력을 높입니다.</p>
+      <div class="about-tags"><span>산학 공동 교육과정</span><span>현장 중심 실습</span><span>전공 융합 프로젝트</span><span>성과·인증 관리</span></div>
+    </div>
+    <div class="about-plan">
+      <div><small>OUR VISION</small><h3>AI 전공융합에서<br>산업현장·진로연계까지</h3><p>AI 기술을 배우는 단계에서 나아가 전공 분야의 문제를 AI로 풀어내는 실천형 교육 체계를 지향합니다.</p></div>
+      <a href="https://www.gwangju.ac.kr/bbs/?b_id=gwangju_promotion_news&amp;bs_idx=6073&amp;mn=376&amp;site=gwangju&amp;type=view" target="_blank" rel="noopener noreferrer">광주대학교 사업 선정 공식자료 보기 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="content wrap" id="tracks">
+  <div class="section-head"><div><span class="kicker">AI × MAJOR</span><h2>전공을 확장하는 AI 융합 교육분야</h2><p>참여 학과와 교육내용을 고려한 분야별 안내입니다. 세부 교과목 및 운영 일정은 사업단·학과 공지를 기준으로 확인하세요.</p></div></div>
+  <div class="track-grid">
+    <article class="track track-wide">
+      <div><span class="track-bubble">AI · DATA · SOFTWARE</span></div>
+      <h3>AI·데이터·소프트웨어</h3>
+      <p>AI 서비스 구현, 클라우드 인프라, 데이터 활용, MLOps 등 실제 서비스 개발과 운영 역량을 강화합니다.</p>
+      <div class="dept">관련 분야 · 컴퓨터공학과</div>
+      <a class="course-link" href="../">컴퓨터공학과 교육과정 보기 <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="track">
+      <span class="track-id">AI · MANUFACTURING</span>
+      <h3>AI·제조 / 디지털트윈</h3>
+      <p>제조공정 이해와 시뮬레이션 기반 디지털트윈 기술을 연계한 응용 교육입니다.</p>
+      <div class="dept">관련 분야 · 기계자동차공학</div>
+      <a class="course-link" href="https://gu-mechanical-digitaltwin.zero2306263.chatgpt.site/">DigitalTwin 과정 보기 <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="track">
+      <span class="track-id">AI · ERP</span>
+      <h3>AI·ERP 융합</h3>
+      <p>기업의 회계·세무·재무 업무와 ERP 시스템에 AI 활용 역량을 접목합니다.</p>
+      <div class="dept">관련 분야 · 회계세무학과</div>
+      <a class="course-link" href="https://at.gwangju.ac.kr/" target="_blank" rel="noopener noreferrer">학과 교육·소식 확인 <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="track">
+      <span class="track-id">AI · ARCHITECTURE</span>
+      <h3>AI·건축 융합</h3>
+      <p>건축 및 공간 설계 문제에 AI 도구를 적용하는 융합 프로젝트와 활용 역량을 지향합니다.</p>
+      <div class="dept">관련 분야 · 건축학과</div>
+      <div class="prepare">세부 프로그램은 사업단·학과 안내 확인</div>
+    </article>
+    <article class="track">
+      <span class="track-id">AI · DESIGN</span>
+      <h3>AI·디자인 / 콘텐츠</h3>
+      <p>디자인 발상, 콘텐츠 제작과 시각적 결과물 구현에 생성형 AI를 활용하는 실습을 지향합니다.</p>
+      <div class="dept">관련 분야 · 산업디자인·시각영상디자인</div>
+      <div class="prepare">세부 프로그램은 사업단·학과 안내 확인</div>
+    </article>
+  </div>
+  <div class="dpt-list">
+    <strong>사업 참여 안내 학과</strong>
+    <div><span>컴퓨터공학과</span><span>기계자동차공학</span><span>회계세무학과</span><span>건축학과</span><span>산업디자인학과</span><span>시각영상디자인학과</span></div>
+  </div>
+</section>
+
+<section class="content wrap" id="method">
+  <div class="section-head"><div><span class="kicker">EDUCATION MODEL</span><h2>실습에서 산업현장까지 이어지는 교육</h2><p>단순 이론교육보다 수행과 산출물이 남는 학습경험에 초점을 맞춥니다.</p></div></div>
+  <div class="training">
+    <div class="training-steps">
+      <div class="training-step"><span class="step-index">01</span><h3>전공·AI 기반 이해</h3><p>교과목과 몰입형 수업을 통해 분야별 기초 개념과 도구를 익힙니다.</p></div>
+      <div class="training-step"><span class="step-index">02</span><h3>Hands-on 집중실습</h3><p>클라우드·제조·업무시스템 등 산업 도구를 직접 활용합니다.</p></div>
+      <div class="training-step"><span class="step-index">03</span><h3>팀 프로젝트·멘토링</h3><p>기업 현직자와 함께 실제 문제를 정의하고 결과물을 구현합니다.</p></div>
+      <div class="training-step"><span class="step-index">04</span><h3>이수·인증 및 진로연계</h3><p>성과를 확인하고 포트폴리오·인증·진로 탐색으로 확장합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="content wrap" id="programs">
+  <div class="section-head"><div><span class="kicker">PROGRAM DIRECTORY</span><h2>현재 개설된 교육 홈페이지</h2><p>개설 페이지 기준으로 연결합니다. 교육 일정과 신청 가능 여부는 각 페이지에서 확인하세요.</p></div><a href="../">컴퓨터공학과 통합 일정 ↗</a></div>
+  <div class="program-list">
+    <article class="program"><span class="prog-mark" aria-hidden="true">CN</span><div><h3>Cloud Native 아키텍처</h3><p>클라우드 네이티브 아키텍처, 현장교육과 핵심서비스 실습</p><a href="../cloud-native/">과정 상세 보기 ↗</a></div></article>
+    <article class="program"><span class="prog-mark" aria-hidden="true">ML</span><div><h3>MLOps</h3><p>머신러닝 모델 개발부터 배포·모니터링까지 실무 워크플로우</p><a href="../mlops/">과정 상세 보기 ↗</a></div></article>
+    <article class="program"><span class="prog-mark" aria-hidden="true">MC</span><div><h3>AWS·NHN 멀티클라우드 운영</h3><p>두 클라우드 환경 비교와 아키텍처 통합실습</p><a href="../multi-cloud.html">과정 상세 보기 ↗</a></div></article>
+    <article class="program"><span class="prog-mark" aria-hidden="true">DT</span><div><h3>DigitalTwin 기반 공정시뮬레이션</h3><p>제조공정·시뮬레이션 응용 중심 현장연계 교육</p><a href="https://gu-mechanical-digitaltwin.zero2306263.chatgpt.site/">과정 상세 보기 ↗</a></div></article>
+    <article class="program"><span class="prog-mark" aria-hidden="true">NC</span><div><h3>Cloud Native NCA 교육</h3><p>클라우드 기초를 실제 서비스 실습과 자격 취득 학습으로 연결</p><a href="../cloudnative-nca/">과정 상세 보기 ↗</a></div></article>
+  </div>
+</section>
+
+<section class="content wrap" id="support">
+  <div class="support">
+    <div class="intro">
+      <small>STUDENT SUPPORT</small>
+      <h2>교육 이수부터<br>인증·장학금 확인까지</h2>
+      <p>사업단에 등록된 몰입형 이수내역과 학과별 이수조건은 서로 구분하여 확인합니다. 인증과 실제 장학금 지급 여부는 최종 기준·심사 결과에 따릅니다.</p>
+      <div class="support-links"><a class="btn btn-mint" href="../certificate-lookup/">나의 몰입형 이수내역 ↗</a><a class="btn btn-ghost" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">이수조건·장학금 안내 ↗</a></div>
+    </div>
     <div class="steps">
-      <article class="step"><div class="step-no">01</div><h3>교육과정 확인</h3><p>본인 학과·트랙에 맞는 몰입형 교과목의 교육내용과 신청 안내를 확인합니다.</p><a class="step-link" href="../">교육과정 살펴보기 ↗</a></article>
-      <article class="step"><div class="step-no">02</div><h3>이수내역 조회</h3><p>교육 참여 후 학번과 학생명을 입력하여 사업단에 등록된 몰입형 이수현황을 확인합니다.</p><a class="step-link" href="../certificate-lookup/">나의 이수내역 확인 ↗</a></article>
-      <article class="step"><div class="step-no">03</div><h3>이수·장학금 요건 확인</h3><p>학과별 인정 교과목·인증요건·필수서류를 확인하고 사업단 안내에 따라 신청합니다.</p><a class="step-link" href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">장학금 안내 보기 ↗</a></article>
+      <div><b>01</b><div><strong>학번·이름으로 본인 이수내역 확인</strong><p>사업단이 등록한 교과목의 이수상태 확인</p></div></div>
+      <div><b>02</b><div><strong>학과별 인정 교과목·학점 검토</strong><p>장학금 홈페이지의 이수조건 및 안내 확인</p></div></div>
+      <div><b>03</b><div><strong>서류 제출 및 인증 심사</strong><p>신청 대상·중복수혜 제한 등 사업단 최종 확인</p></div></div>
     </div>
-    <div class="notice">
-      <h3>확인 사항</h3>
-      <p>교과목 이수내역 조회 결과는 교육 현황 확인용이며 공식 이수증이나 성적증명서를 대신하지 않습니다. 실제 이수·인증 인정 및 장학금 지급 여부는 사업단의 최종 심사·공고를 따릅니다. 학번과 성명 등 개인식별정보는 본인 조회 목적으로만 입력하세요.</p>
-    </div>
-    <div class="departments" aria-label="사업 참여학과">
-      <span>컴퓨터공학과</span><span>기계자동차공학과</span><span>회계세무학과</span><span>건축학과</span><span>산업디자인학과</span><span>시각영상디자인학과</span>
-    </div>
-  </section>
+  </div>
+</section>
+
+<section class="content wrap" id="activities">
+  <div class="section-head"><div><span class="kicker">CAMPUS NEWS</span><h2>사업단 주요 소식</h2><p>광주대학교 및 협력기관의 공개 자료에서 확인한 활동입니다.</p></div><a href="https://www.gwangju.ac.kr/" target="_blank" rel="noopener noreferrer">광주대학교 소식 더보기 ↗</a></div>
+  <div class="news-grid">
+    <a class="news" href="https://www.gwangju.ac.kr/bbs/?b_id=gwangju_promotion_news&amp;bs_idx=6073&amp;mn=376&amp;site=gwangju&amp;type=view" target="_blank" rel="noopener noreferrer">
+      <small>사업 선정</small><h3>광주대학교, 첨단산업 인재양성 부트캠프 사업 선정</h3><p>기업과 공동으로 AI 융합 실무인재 양성체계를 구축합니다.</p><span class="date">2026.03.04 · 광주대학교</span>
+    </a>
+    <a class="news" href="https://www.gwangju.ac.kr/bbs/?b_id=gwangju_promotion_news&amp;bs_idx=6476&amp;mn=376&amp;site=gwangju&amp;type=view" target="_blank" rel="noopener noreferrer">
+      <small>실습·프로젝트</small><h3>전공 간 협업으로 완성한 2026 AI 해커톤 경진대회</h3><p>여러 전공 학생이 AI 도구를 활용한 팀 프로젝트에 참여했습니다.</p><span class="date">2026.09.28 · 광주대학교</span>
+    </a>
+    <a class="news" href="https://at.gwangju.ac.kr/" target="_blank" rel="noopener noreferrer">
+      <small>AI · ERP</small><h3>기업 현장의 AI·ERP 융합 교육과 산학협력</h3><p>회계세무학과의 ERP 실무 역량과 AI 활용을 연결합니다.</p><span class="date">2026.11 · 광주대학교 회계세무학과</span>
+    </a>
+  </div>
+</section>
+
+<section class="content wrap" id="faq">
+  <div class="section-head"><div><span class="kicker">FAQ</span><h2>자주 묻는 질문</h2><p>학생들이 이수·신청 전에 자주 확인하는 사항을 정리했습니다.</p></div></div>
+  <div class="faq">
+    <details><summary>어떤 학과의 학생이 참여할 수 있나요?</summary><p>사업 참여학과 및 교육트랙에 따라 대상이 달라질 수 있습니다. 각 교육과정의 모집 안내와 사업단·학과의 공식 공지를 우선 확인해 주세요.</p></details>
+    <details><summary>몰입형 교과목의 이수현황은 어디서 확인하나요?</summary><p>이 홈페이지의 ‘몰입형 이수확인’에서 학번과 학생명을 입력하면 사업단에 등록된 이수현황을 확인할 수 있습니다. 타인의 정보를 조회해서는 안 됩니다.</p></details>
+    <details><summary>이수내역이 있으면 장학금이 자동 지급되나요?</summary><p>아닙니다. 인증요건, 인정학점, 참여자격, 서류 제출 및 중복수혜 제한 등을 심사해 대상자를 확정합니다. 장학금 홈페이지 안내를 확인해 주세요.</p></details>
+    <details><summary>교육 일정과 신청은 어디에서 확인하나요?</summary><p>현재 개설된 교육 홈페이지에서 과정별 일정과 운영내용을 확인하세요. 신청 가능 여부와 변경된 일정은 사업단·학과 공지가 우선합니다.</p></details>
+  </div>
+</section>
+
+<div class="wrap" id="contact">
+  <div class="contact">
+    <div><small>CONTACT & INFORMATION</small><h2>문의 및 운영 안내</h2><p>광주대학교 AI부트캠프사업단 · 광주대학교 인성관 1층 (사업단 운영 안내 기준)</p><p>교육 참가·이수·장학금에 관한 세부사항은 각 프로그램 및 사업단 공지를 확인해 주세요.</p></div>
+    <a class="btn btn-navy" href="https://www.gwangju.ac.kr/" target="_blank" rel="noopener noreferrer">광주대학교 홈페이지 ↗</a>
+  </div>
+</div>
 </main>
-<footer><div class="wrap foot"><div><strong>광주대학교 AI부트캠프사업단</strong><small>교육과정 · 몰입형 이수내역 · 이수·인증 장학금 통합 안내</small></div><a href="#services">위로 이동 ↑</a></div></footer>
-</body></html>
+<footer>
+  <div class="wrap footer-inner">
+    <div><strong>광주대학교 AI부트캠프사업단</strong><small>첨단산업 인재양성 부트캠프 사업 · 인공지능(AI) 융합 실무인재 양성<br>본 페이지는 사업단 교육 안내와 개별 서비스 연결을 위한 통합 홈페이지입니다.</small></div>
+    <div class="footer-links"><a href="#about">사업 소개</a><a href="#tracks">교육 분야</a><a href="../">기존 교육과정</a><a href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">장학금 홈페이지</a><a href="../certificate-lookup/">이수내역 조회</a></div>
+  </div>
+</footer>
+</body>
+</html>
