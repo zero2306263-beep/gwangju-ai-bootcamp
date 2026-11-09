@@ -167,12 +167,21 @@ footer{margin-top:82px;border-top:1px solid var(--line);background:#fff}
 @media(max-width:540px){.brand-name{font-size:13px}.brand-emblem{width:39px;height:39px}.hero h1{font-size:31px}.hero-desc{font-size:13px}.hero-buttons{flex-direction:column}.hero-buttons .btn{width:100%}.hero-visual{display:none}.shortcuts,.track-grid,.news-grid{grid-template-columns:1fr}.news-grid .news:last-child{grid-column:auto}.shortcut{min-height:0}.about-copy{padding:27px}.about-plan{padding:27px}.training{padding:25px}.training-steps{grid-template-columns:1fr}.training-step:after{display:none!important}.dpt-list{padding:20px}.support .intro,.support .steps{padding:27px}.section-head{flex-direction:column;align-items:flex-start}.contact{padding:25px}.contact .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.shortcut,.track,.news{transition:none}}
 </style>
+<style id="gu-unified-brand-style">
+.gu-site-brand{display:inline-flex;align-items:center;justify-content:flex-start;flex-shrink:0;min-width:0;line-height:1;text-decoration:none}
+.gu-site-brand img{width:clamp(220px,24vw,316px);height:auto;max-width:100%;display:block;object-fit:contain}
+.gu-site-brand--on-dark{background:#fff;border-radius:10px;padding:3px 8px}
+.gu-site-brand:hover{opacity:.88}
+.gu-site-brand:focus-visible{outline:3px solid #54d8b5;outline-offset:4px}
+@media(max-width:600px){.gu-site-brand img{width:min(286px,calc(100vw - 50px))}}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">본문 바로가기</a>
 <header>
   <div class="navbar wrap">
-    <a class="brand" href="#top" aria-label="광주대학교 AI부트캠프사업단 메인으로 이동"><span class="brand-emblem">GU</span><span class="brand-name">광주대학교 AI부트캠프사업단<small>GWANGJU UNIVERSITY · AI BOOTCAMP</small></span></a>
+    <a class="gu-site-brand" href="../portal/" aria-label="광주대학교 AI부트캠프사업단 통합 메인페이지로 이동" title="사업단 메인페이지로 이동"><img src="../assets/gu-ai-bootcamp-logo.svg" alt="GU 광주대학교 AI부트캠프사업단" width="540" height="98" loading="eager" decoding="async"></a>
     <nav class="header-links" aria-label="주 메뉴">
       <a href="#about">사업단 소개</a><a href="#tracks">교육분야</a><a href="#programs">교육 프로그램</a><a href="#activities">사업단 소식</a><a href="#support">이수·장학금</a><a class="nav-apply" href="../certificate-lookup/">나의 이수내역 ↗</a>
     </nav>
