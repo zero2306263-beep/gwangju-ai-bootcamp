@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">\n<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n<meta http-equiv="Pragma" content="no-cache">\n<meta http-equiv="Expires" content="0">
-<meta name="description" content="2026 광주대학교 AI부트캠프 2학기 몰입형 교과목">
-<title>광주대학교 AI부트캠프 | 2학기 몰입형 교과목</title>
+<meta name="description" content="광주대학교 AI부트캠프 학과별 교육과정, 장학금 안내 및 몰입형 이수확인">
+<title>광주대학교 AI부트캠프 | 통합 안내</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -94,13 +94,28 @@ header{
   background:linear-gradient(180deg,transparent 68%,rgba(87,119,163,.16) 68%);
 }
 .hero p{max-width:760px;margin:0 auto;color:#58677a;font-size:16px}
-.hero .hint{
-  display:inline-flex;align-items:center;gap:8px;
-  margin-top:24px;background:#fff;border:1px solid var(--line);
-  border-radius:999px;padding:9px 14px;font-size:11px;color:#59677a;
-  box-shadow:0 8px 22px rgba(20,43,70,.05)
+.student-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 650px;
+  margin: 26px auto 0;
 }
-.hero .hint:after{content:"↓";font-weight:800;color:var(--navy)}
+.student-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+}
+.student-nav a::after { content: "→"; }
+.student-nav a:hover, .student-nav a:focus-visible { border-color: var(--navy); }
+@media (max-width: 580px) { .student-nav { grid-template-columns: 1fr; } }
 
 
 
@@ -301,7 +316,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}
       <span>2026학년도 2학기</span>
     </div>
   </div>
-  <div class="head-note">몰입형 교과목 안내</div>
+  <div class="head-note">학생 통합 안내</div>
 </div>
 </header>
 
@@ -309,9 +324,14 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}
 <section class="hero">
 <div class="wrap">
   <div class="eyebrow">GWANGJU UNIVERSITY AI BOOTCAMP</div>
-  <h1>2학기 <span>몰입형 교과목</span></h1>
-  <p>클라우드와 AI 분야의 실무역량을 집중적으로 학습하는 프로그램입니다. 과목별 특징과 전체 일정을 확인하고, 원하는 교과목을 클릭하면 상세 교육페이지로 이동합니다.</p>
-  <div class="hint">과목을 선택해 상세 교육내용을 확인하세요</div>
+  <h1>광주대학교 <span>AI부트캠프</span></h1>
+  <p>학과별 교육과정을 살펴보고 장학금 신청 요건과 내 이수내역을 확인하세요.</p>
+  <nav class="student-nav" aria-label="학생 바로가기">
+    <a href="#courses">컴퓨터공학과 교육과정</a>
+    <a href="https://gu-mechanical-digitaltwin.zero2306263.chatgpt.site/">기계·자동차공학 디지털 트윈</a>
+    <a href="https://gu-ai-scholarship.zero2306263.chatgpt.site/">이수·장학금 안내</a>
+    <a href="./certificate-lookup/">몰입형 이수확인</a>
+  </nav>
 </div>
 </section>
 
@@ -383,7 +403,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}
 <div class="wrap">
   <div class="title">
     <span>COURSE</span>
-    <h2>운영 교과목</h2>
+    <h2>컴퓨터공학과 운영 교과목</h2>
     <p>각 과정의 핵심 특징을 확인하고 원하는 교과목을 선택하세요.</p>
   </div>
 
@@ -434,7 +454,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}
     <div class="cal-top">
       <div class="cal-title">
         <small>SCHEDULE</small>
-        <h2>2026년 11월 통합 교육일정</h2>
+        <h2>컴퓨터공학과 11월 교육일정</h2>
       </div>
       <div class="legend">
         <span><i style="background:var(--multi)"></i>멀티클라우드</span>
