@@ -62,14 +62,20 @@
     @media(max-width:900px){.nav{display:none}.hero-grid{grid-template-columns:1fr}.highlight-grid,.output-grid{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:repeat(2,1fr)}.cta-card{grid-template-columns:1fr}.timeline-item{grid-template-columns:52px 1fr}.timeline-item time{grid-column:2;text-align:left;color:var(--blue)}}
     @media(max-width:620px){.container{width:min(100% - 28px,1160px)}.hero{padding-top:60px}h1{font-size:36px}.hero-lead{font-size:16px}.workflow{grid-template-columns:1fr}.highlight-grid,.output-grid,.info-grid{grid-template-columns:1fr}.section{padding:66px 0}.section-head h2{font-size:29px}.cta-card{padding:27px}.footer-inner{flex-direction:column}}
   </style>
+<style id="gu-unified-brand-style">
+.gu-site-brand{display:inline-flex;align-items:center;justify-content:flex-start;flex-shrink:0;min-width:0;line-height:1;text-decoration:none}
+.gu-site-brand img{width:clamp(220px,24vw,316px);height:auto;max-width:100%;display:block;object-fit:contain}
+.gu-site-brand--on-dark{background:#fff;border-radius:10px;padding:3px 8px}
+.gu-site-brand:hover{opacity:.88}
+.gu-site-brand:focus-visible{outline:3px solid #54d8b5;outline-offset:4px}
+@media(max-width:600px){.gu-site-brand img{width:min(286px,calc(100vw - 50px))}}
+
+</style>
 </head>
 <body>
 <header class="topbar">
   <div class="container nav-wrap">
-    <a class="brand" href="#top">
-      <span class="brand-mark">GU</span>
-      <span class="brand-text"><strong>광주대학교</strong><small>인공지능 부트캠프사업단</small></span>
-    </a>
+    <a class="gu-site-brand" href="../portal/" aria-label="광주대학교 AI부트캠프사업단 통합 메인페이지로 이동" title="사업단 메인페이지로 이동"><img src="../assets/gu-ai-bootcamp-logo.svg" alt="GU 광주대학교 AI부트캠프사업단" width="540" height="98" loading="eager" decoding="async"></a>
     <nav class="nav">
       <a href="#about">과정소개</a>
       <a href="#curriculum">교육과정</a>
