@@ -48,11 +48,20 @@ footer{border-top:1px solid var(--line);padding:26px 0;background:#fff}.footer{d
 @media(max-width:980px){nav{display:none}.hero-grid{grid-template-columns:1fr}.five-step{grid-template-columns:1fr 1fr}.value-grid{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:1fr 1fr}.row{grid-template-columns:80px 100px 1fr}.row .cloud,.row .mode{grid-column:auto}.row>div:nth-child(4){grid-column:1/-1}.compare-wrap{grid-template-columns:1fr}.vs{margin:auto}.project-grid{grid-template-columns:1fr}.requirements,.cta-card{grid-template-columns:1fr}}
 @media(max-width:620px){.container{width:min(100% - 28px,1160px)}.hero{padding-top:60px}h1{font-size:36px}.hero p{font-size:16px}.cloud-cols{grid-template-columns:1fr}.five-step,.value-grid,.info-grid{grid-template-columns:1fr}.section{padding:66px 0}.section-head h2{font-size:29px}.row{grid-template-columns:1fr}.project,.cta-card{padding:26px}.footer{flex-direction:column}}
 </style>
+<style id="gu-unified-brand-style">
+.gu-site-brand{display:inline-flex;align-items:center;justify-content:flex-start;flex-shrink:0;min-width:0;line-height:1;text-decoration:none}
+.gu-site-brand img{width:clamp(220px,24vw,316px);height:auto;max-width:100%;display:block;object-fit:contain}
+.gu-site-brand--on-dark{background:#fff;border-radius:10px;padding:3px 8px}
+.gu-site-brand:hover{opacity:.88}
+.gu-site-brand:focus-visible{outline:3px solid #54d8b5;outline-offset:4px}
+@media(max-width:600px){.gu-site-brand img{width:min(286px,calc(100vw - 50px))}}
+
+</style>
 </head>
 <body>
 <header>
 <div class="container navbar">
-<a class="brand" href="#top"><span class="brand-mark">MC</span><span class="brand-text"><strong>광주대학교</strong><small>인공지능 부트캠프사업단</small></span></a>
+<a class="gu-site-brand" href="../portal/" aria-label="광주대학교 AI부트캠프사업단 통합 메인페이지로 이동" title="사업단 메인페이지로 이동"><img src="../assets/gu-ai-bootcamp-logo.svg" alt="GU 광주대학교 AI부트캠프사업단" width="540" height="98" loading="eager" decoding="async"></a>
 <nav><a href="#about">과정소개</a><a href="#flow">5단계 과정</a><a href="#compare">서비스 비교</a><a href="#project">프로젝트</a><a class="nav-cta" href="#apply">신청안내</a></nav>
 </div>
 </header>
